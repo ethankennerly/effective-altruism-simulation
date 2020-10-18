@@ -1,8 +1,8 @@
 using NUnit.Framework;
-using PoorFamilySimulator.Simulation;
+using PoorFamily.Simulation;
 using System;
 
-namespace PoorFamilySimulator.Simulation.Tests
+namespace PoorFamily.Simulation.Tests
 {
     public sealed class YearTimerTests
     {

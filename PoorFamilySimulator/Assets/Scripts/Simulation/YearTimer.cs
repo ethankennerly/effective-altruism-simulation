@@ -3,7 +3,7 @@ using System;
 
 using Debug = UnityEngine.Debug;
 
-namespace PoorFamilySimulator.Simulation
+namespace PoorFamily.Simulation
 {
     public sealed class YearTimer
     {
