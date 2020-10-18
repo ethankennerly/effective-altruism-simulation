@@ -31,7 +31,7 @@ The following features have not been prioritized or implemented.
 
 ## Win Condition
 
-Doubling of purchasing-power-parity income from a benchmark near the poorest one percent. As a benchmark of the poorest, $100 USD PPP in 2013 is benchmarked at 0. So an income of $200 doubles 1 time, $400 doubles 2 times. The average of those two humans would be 1.5. This attempts to incentivize investments in both the poor and rich, with a heavy emphasis on investing in the poor.
+Doubling of purchasing-power-parity income from a benchmark near the poorest one percent. As a benchmark of the poorest annual income, $100 USD PPP in 2013 is benchmarked at 0. So an income of $200 doubles 1 time, $400 doubles 2 times. The average of those two humans would be 1.5. This attempts to incentivize investments in both the poor and rich, with a heavy emphasis on investing in the poor.
 
 In this simulation, all monetary values are normalized to some estimates of USD PPP sometime between 2013 and 2020. 
 
