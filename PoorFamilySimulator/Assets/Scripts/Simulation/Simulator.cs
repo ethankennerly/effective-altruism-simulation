@@ -1,22 +1,26 @@
+using System;
 using System.Collections.Generic;
 
 using Mathf = UnityEngine.Mathf;
 
 namespace PoorFamily.Simulation
 {
+    [Serializable]
     public sealed class Simulator
     {
         private const int kDoublingBase = 2;
 
         public float PoorestIncome = 100f;
+        public float AverageDoublingsOfIncome;
 
         public YearTimer YearTimer { get; } = new YearTimer(2013, 100); 
 
-        public List<Human> Humans { get; } = new List<Human>();
+        public List<Human> Humans = new List<Human>();
 
         public void AddTime(float deltaTime)
         {
             YearTimer.AddYears(deltaTime);
+            AverageDoublingsOfIncome = CalculateAverageDoublingsOfIncome();
         }
 
         public float CalculateAverageDoublingsOfIncome()

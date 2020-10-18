@@ -43,3 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d22907419b3b34446b10def81a0bae86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Simulator:
+    PoorestIncome: 100
+    AverageDoublingsOfIncome: 0
+    Humans:
+    - Income: 200
+      DoublingsOfIncome: 0
+    - Income: 400
+      DoublingsOfIncome: 0

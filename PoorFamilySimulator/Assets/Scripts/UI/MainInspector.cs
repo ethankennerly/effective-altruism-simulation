@@ -5,7 +5,7 @@ namespace PoorFamily.UI
 {
     public sealed class MainInspector : MonoBehaviour
     {
-        public Simulator Simulator {get;} = new Simulator();
+        public Simulator Simulator = new Simulator();
 
         public void Update()
         {
