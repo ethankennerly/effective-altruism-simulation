@@ -1,4 +1,4 @@
-# Simulating Effective Altruism
+# Poor Family Simulator
 
 How can I help?
 
