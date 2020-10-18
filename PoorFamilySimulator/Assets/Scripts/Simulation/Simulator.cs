@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 
 using Mathf = UnityEngine.Mathf;
+using UnityEngine;
 
 namespace PoorFamily.Simulation
 {
@@ -10,8 +11,9 @@ namespace PoorFamily.Simulation
     {
         private const int kDoublingBase = 2;
 
-        public float PoorestIncome = 100f;
-        public float AverageDoublingsOfIncome;
+        [Range(100, 102400)] public float PoorestIncome = 100f;
+
+        [Range(0, 10)] public float AverageDoublingsOfIncome;
 
         public YearTimer YearTimer { get; } = new YearTimer(2013, 100); 
 
