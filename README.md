@@ -55,8 +55,10 @@ All values normalized to USD PPP.
 
 ### Human Actions
 
-- Have a child.
+- Die.
+- Survive.
 - Care for a child or a parent.
-- Learn to read.
 - Work.
-- Entertain.
+- Have a child.
+- Learn to read.
+- Play.
