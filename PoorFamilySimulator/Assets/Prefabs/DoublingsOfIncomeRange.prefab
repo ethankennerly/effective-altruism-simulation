@@ -291,6 +291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6737876752992168729}
+  - component: {fileID: 8171055609155222628}
   m_Layer: 0
   m_Name: DoublingsOfIncomeRange
   m_TagString: Untagged
@@ -316,6 +317,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8171055609155222628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7743367310472064067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f59b1415d3ab148b26ef6ca9f398b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SimulatorInspector: {fileID: 0}
+  m_HumanPositioner:
+    HumanPrefab: {fileID: 4950949121422568039, guid: 7f16dbee4db378045b4150c80d5f57d3,
+      type: 3}
+    HumanPositionRoot: {fileID: 6737876752992168729}
+    PoorestPosition: {fileID: 6752771967708213215}
+    RichestPosition: {fileID: 4911070653908303332}
+    AveragePosition: {fileID: 1355857744509919847}
+    HumanObjects: []
 --- !u!1 &8225815880507098532
 GameObject:
   m_ObjectHideFlags: 0
