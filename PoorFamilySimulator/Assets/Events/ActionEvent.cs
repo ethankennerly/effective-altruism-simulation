@@ -33,23 +33,23 @@ namespace FineGameDesign.Events
             return m_Value;
         }
 
-        public void SetValue(T next)
+        public void SetValue(T nextValue)
         {
-            if (m_Value == null && next == null)
+            if (m_Value == null && nextValue == null)
             {
                 return;
             }
 
-            if (m_Value != null && m_Value.Equals(next))
+            if (m_Value != null && m_Value.Equals(nextValue))
             {
                 return;
             }
 
-            m_Value = next;
-            TryInvoke(next);
+            m_Value = nextValue;
+            TryInvoke(nextValue);
         }
 
-        private void TryInvoke(T value)
+        public void TryInvoke(T value)
         {
             if (m_OnInvoke == null)
             {

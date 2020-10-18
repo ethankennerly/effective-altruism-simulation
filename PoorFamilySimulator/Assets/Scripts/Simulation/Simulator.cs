@@ -1,7 +1,6 @@
+using FineGameDesign.Events;
 using System;
 using System.Collections.Generic;
-
-using Mathf = UnityEngine.Mathf;
 using UnityEngine;
 
 namespace PoorFamily.Simulation
@@ -19,9 +18,16 @@ namespace PoorFamily.Simulation
         public float PoorestDoublings;
         [Range(0, 10)] public float RichestDoublings;
 
+        public readonly ActionEvent<Simulator> Updated = new ActionEvent<Simulator>();
+
         public YearTimer YearTimer { get; } = new YearTimer(2013, 100); 
 
         public List<Human> Humans = new List<Human>();
+
+        public Simulator()
+        {
+            Updated.SetValue(this);
+        }
 
         public void AddTime(float deltaTime)
         {
@@ -31,6 +37,8 @@ namespace PoorFamily.Simulation
             PoorestDoublings = Mathf.Log(PoorestIncome, kDoublingBase);
             RichestDoublings = Mathf.Log(RichestIncome, kDoublingBase) - PoorestDoublings;
             NormalizedWealth = Mathf.Clamp01(AverageDoublingsOfIncome / RichestDoublings);
+
+            Updated.TryInvoke(this);
         }
 
         public float CalculateAverageDoublingsOfIncome()
