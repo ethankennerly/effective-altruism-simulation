@@ -6,7 +6,7 @@ namespace PoorFamily.UI
 {
     public sealed class YearText : MonoBehaviour
     {
-        [SerializeField] private MainInspector m_MainInspector = null;
+        [SerializeField] private SimulatorInspector m_SimulatorInspector = null;
         [SerializeField] private TMP_Text m_YearText = null;
 
         private Action<string> m_OnTextChanged;
@@ -18,12 +18,12 @@ namespace PoorFamily.UI
 
         private void OnEnable()
         {
-            m_MainInspector.Simulator.YearTimer.TextChanged.OnInvoke += m_OnTextChanged;
+            m_SimulatorInspector.Simulator.YearTimer.TextChanged.OnInvoke += m_OnTextChanged;
         }
 
         private void OnDisable()
         {
-            m_MainInspector.Simulator.YearTimer.TextChanged.OnInvoke -= m_OnTextChanged;
+            m_SimulatorInspector.Simulator.YearTimer.TextChanged.OnInvoke -= m_OnTextChanged;
         }
 
         private void SetYearText(string nextYearText)

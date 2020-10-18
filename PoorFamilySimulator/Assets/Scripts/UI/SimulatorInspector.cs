@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace PoorFamily.UI
 {
-    public sealed class MainInspector : MonoBehaviour
+    public sealed class SimulatorInspector : MonoBehaviour
     {
         public Simulator Simulator = new Simulator();
 
