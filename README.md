@@ -35,7 +35,7 @@ All values normalized to USD PPP.
 
 ## Taking a Turn
 
-1 year.
+1 year passes per second.
 
 ## Human
 

@@ -10,16 +10,35 @@ namespace PoorFamily.Simulation
         public ActionEvent<string> TextChanged = new ActionEvent<string>();
 
         private int m_CurrentYear;
+
+        private int m_EndYear;
+
         private float m_FractionalYears;
 
-        public YearTimer(int startingYear)
+        public YearTimer(int startingYear, int yearsRemaining)
         {
+            m_EndYear = startingYear + yearsRemaining;
             SetYear(startingYear);
         }
 
-        public void AddYears(float years)
+        public int GetYear()
         {
-            m_FractionalYears += years;
+            return m_CurrentYear;
+        }
+
+        public void AddYears(float additionalYears)
+        {
+            if (additionalYears == 0f)
+            {
+                return;
+            }
+
+            if (m_CurrentYear >= m_EndYear && additionalYears > 0f)
+            {
+                return;
+            }
+
+            m_FractionalYears += additionalYears;
             if (m_FractionalYears < 1f && m_FractionalYears >= -1f)
             {
                 return;
@@ -31,6 +50,11 @@ namespace PoorFamily.Simulation
 
         private void SetYear(int currentYear)
         {
+            if (currentYear >= m_EndYear)
+            {
+                currentYear = m_EndYear;
+            }
+
             if (currentYear == m_CurrentYear)
             {
                 return;
