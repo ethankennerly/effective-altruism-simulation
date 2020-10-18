@@ -12,8 +12,10 @@ namespace PoorFamily.Simulation
         private const int kDoublingBase = 2;
 
         [Range(100, 102400)] public float PoorestIncome = 100f;
+        [Range(100, 102400)] public float RichestIncome = 102400f;
 
         [Range(0, 10)] public float AverageDoublingsOfIncome;
+        [Range(0f, 1f)] public float NormalizedWealth;
 
         public YearTimer YearTimer { get; } = new YearTimer(2013, 100); 
 

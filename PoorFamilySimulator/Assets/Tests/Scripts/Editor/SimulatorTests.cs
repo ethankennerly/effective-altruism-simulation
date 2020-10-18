@@ -24,5 +24,25 @@ namespace PoorFamily.Simulation.Tests
             simulator.AddTime(0.001f);
             Assert.AreEqual(1.5f, simulator.AverageDoublingsOfIncome);
         }
+
+        [Test]
+        public void NormalizedWealth_ZeroHumans_Zero()
+        {
+            Simulator simulator = new Simulator();
+            simulator.CalculateAverageDoublingsOfIncome();
+            Assert.AreEqual(0f, simulator.NormalizedWealth);
+        }
+
+        [Test]
+        public void NormalizedWealth_200And400ThenAddTime_EqualsHalf()
+        {
+            Simulator simulator = new Simulator{PoorestIncome = 100};
+            Human income200 = new Human{Income = 1600};
+            Human income400 = new Human{Income = 6400};
+            simulator.Humans.Add(income200);
+            simulator.Humans.Add(income400);
+            simulator.AddTime(0.001f);
+            Assert.AreEqual(0.5f, simulator.NormalizedWealth);
+        }
     }
 }
