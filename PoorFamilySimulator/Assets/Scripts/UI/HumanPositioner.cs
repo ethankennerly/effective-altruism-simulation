@@ -17,6 +17,10 @@ namespace PoorFamily.UI
 
         public void UpdatePositions(Simulator simulator)
         {
+            if (HumanObjects == null)
+            {
+                HumanObjects = new List<GameObject>();
+            }
         }
     }
 }
