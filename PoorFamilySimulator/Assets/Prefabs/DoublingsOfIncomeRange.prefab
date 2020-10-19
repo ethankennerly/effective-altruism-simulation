@@ -333,11 +333,11 @@ MonoBehaviour:
   m_HumanPositioner:
     HumanPrefab: {fileID: 4950949121422568039, guid: 7f16dbee4db378045b4150c80d5f57d3,
       type: 3}
-    HumanPositionRoot: {fileID: 6737876752992168729}
-    PoorestPosition: {fileID: 6752771967708213215}
-    RichestPosition: {fileID: 4911070653908303332}
-    AveragePosition: {fileID: 1355857744509919847}
-    HumanObjects: []
+    HumanRoot: {fileID: 6737876752992168729}
+    PoorestTransform: {fileID: 6752771967708213215}
+    RichestTransform: {fileID: 4911070653908303332}
+    AverageTransform: {fileID: 1355857744509919847}
+    HumanTransforms: []
 --- !u!1 &8225815880507098532
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,18 +9,23 @@ namespace PoorFamily.UI
     public sealed class HumanPositioner
     {
         public GameObject HumanPrefab = null;
-        public Transform HumanPositionRoot = null;
-        public Transform PoorestPosition = null;
-        public Transform RichestPosition = null;
-        public Transform AveragePosition = null;
-        public List<GameObject> HumanObjects = null;
+        public Transform HumanRoot = null;
+        public Transform PoorestTransform = null;
+        public Transform RichestTransform = null;
+        public Transform AverageTransform = null;
+        public List<Transform> HumanTransforms = null;
 
         public void UpdatePositions(Simulator simulator)
         {
-            if (HumanObjects == null)
+            if (HumanTransforms == null)
             {
-                HumanObjects = new List<GameObject>();
+                HumanTransforms = new List<Transform>();
             }
+
+            float lerpAmount = simulator.NormalizedWealth;
+            Vector3 normalizedPosition = Vector3.Lerp(
+                PoorestTransform.localPosition, RichestTransform.localPosition, lerpAmount);
+            AverageTransform.localPosition = normalizedPosition;
         }
     }
 }
