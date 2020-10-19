@@ -38,7 +38,7 @@ namespace PoorFamily.UI
             int humanIndex = 0;
             foreach (Transform humanTransform in HumanTransforms)
             {
-                float lerpAmount = simulator.Humans[humanIndex].NormalizedWealth;
+                float lerpAmount = simulator.Humans[humanIndex].NormalizedIncome;
                 Vector3 humanPosition = Vector3.Lerp(
                     PoorestTransform.localPosition, RichestTransform.localPosition, lerpAmount);
                 humanTransform.localPosition = humanPosition;
@@ -48,7 +48,7 @@ namespace PoorFamily.UI
 
         private void PositionAverage(Simulator simulator)
         {
-            float lerpAmount = simulator.NormalizedWealth;
+            float lerpAmount = simulator.NormalizedIncome;
             Vector3 normalizedPosition = Vector3.Lerp(
                 PoorestTransform.localPosition, RichestTransform.localPosition, lerpAmount);
             AverageTransform.localPosition = normalizedPosition;

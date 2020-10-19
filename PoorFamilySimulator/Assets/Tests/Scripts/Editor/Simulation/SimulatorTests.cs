@@ -26,15 +26,15 @@ namespace PoorFamily.Simulation.Tests
         }
 
         [Test]
-        public void NormalizedWealth_ZeroHumans_Zero()
+        public void NormalizedIncome_ZeroHumans_Zero()
         {
             Simulator simulator = new Simulator();
             simulator.AddTime(0.001f);
-            Assert.AreEqual(0f, simulator.NormalizedWealth);
+            Assert.AreEqual(0f, simulator.NormalizedIncome);
         }
 
         [Test]
-        public void NormalizedWealth_6400And1600ThenAddTime_EqualsHalf()
+        public void NormalizedIncome_6400And1600ThenAddTime_EqualsHalf()
         {
             Simulator simulator = new Simulator{PoorestIncome = 100};
             Human income6400 = new Human{Income = 6400};
@@ -42,32 +42,32 @@ namespace PoorFamily.Simulation.Tests
             simulator.Humans.Add(income6400);
             simulator.Humans.Add(income1600);
             simulator.AddTime(0.001f);
-            Assert.AreEqual(0.5f, simulator.NormalizedWealth);
+            Assert.AreEqual(0.5f, simulator.NormalizedIncome);
         }
 
         [Test]
-        public void AddTime_HumansUpdated_SetNormalizedWealth()
+        public void AddTime_HumansUpdated_SetNormalizedIncome()
         {
-            float normalizedWealth = 0f;
-            Action<Simulator> setNormalizedWealth = (updatedSimulator) =>
-                normalizedWealth = updatedSimulator.NormalizedWealth;
+            float normalizedIncome = 0f;
+            Action<Simulator> setNormalizedIncome = (updatedSimulator) =>
+                normalizedIncome = updatedSimulator.NormalizedIncome;
 
             Simulator simulator = new Simulator{PoorestIncome = 100};
             Human income102400 = new Human{Income = 102400};
             simulator.Humans.Add(income102400);
             simulator.AddTime(0.001f);
-            simulator.Updated.OnInvoke += setNormalizedWealth;
-            Assert.AreEqual(1f, normalizedWealth, "Richest human added");
+            simulator.Updated.OnInvoke += setNormalizedIncome;
+            Assert.AreEqual(1f, normalizedIncome, "Richest human added");
 
             Human income100 = new Human{Income = 100};
             simulator.Humans.Add(income100);
             simulator.AddTime(0.001f);
-            Assert.AreEqual(0.5f, normalizedWealth, "Poorest human added");
+            Assert.AreEqual(0.5f, normalizedIncome, "Poorest human added");
 
-            simulator.Updated.OnInvoke -= setNormalizedWealth;
+            simulator.Updated.OnInvoke -= setNormalizedIncome;
             simulator.Humans.Remove(income100);
             simulator.AddTime(0.001f);
-            Assert.AreEqual(0.5f, normalizedWealth, "Removed listener");
+            Assert.AreEqual(0.5f, normalizedIncome, "Removed listener");
         }
     }
 }

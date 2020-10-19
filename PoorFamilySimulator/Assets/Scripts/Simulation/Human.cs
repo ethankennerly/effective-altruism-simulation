@@ -8,6 +8,6 @@ namespace PoorFamily.Simulation
     {
         [Range(100, 102400)] public float Income;
         [Range(0, 10)] public float DoublingsOfIncome;
-        [Range(0f, 1f)] public float NormalizedWealth;
+        [Range(0f, 1f)] public float NormalizedIncome;
     }
 }
