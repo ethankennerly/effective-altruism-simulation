@@ -32,13 +32,22 @@ namespace PoorFamily.UI.Tests
             humanPositioner.UpdatePositions(simulator);
             Assert.AreEqual(-1f, humanPositioner.AverageTransform.localPosition.x, "Average");
             Assert.AreEqual(2, humanPositioner.HumanTransforms.Count, "Number of Human Transforms");
-            Assert.AreEqual(0f, humanPositioner.HumanTransforms[0].localPosition.x, "Income 6400");
-            Assert.AreEqual(-2f, humanPositioner.HumanTransforms[1].localPosition.x, "Income 1600");
+            Assert.That(
+                humanPositioner.HumanTransforms[0].localPosition.x,
+                Is.EqualTo(0f).Within(0.125f),
+                "Income 6400"
+            );
+            Assert.That(
+                humanPositioner.HumanTransforms[1].localPosition.x,
+                Is.EqualTo(-2f).Within(0.125f),
+                "Income 1600"
+            );
         }
 
         private static HumanPositioner SetUpHumanPositioner()
         {
             HumanPositioner humanPositioner = new HumanPositioner();
+            humanPositioner.HumanPrefab = new GameObject();
             humanPositioner.HumanRoot = new GameObject().transform;
             humanPositioner.PoorestTransform = new GameObject().transform;
             humanPositioner.RichestTransform = new GameObject().transform;

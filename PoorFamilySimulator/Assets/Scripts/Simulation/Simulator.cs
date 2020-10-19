@@ -33,9 +33,6 @@ namespace PoorFamily.Simulation
         {
             YearTimer.AddYears(deltaTime);
             AverageDoublingsOfIncome = CalculateAverageDoublingsOfIncome();
-
-            PoorestDoublings = Mathf.Log(PoorestIncome, kDoublingBase);
-            RichestDoublings = Mathf.Log(RichestIncome, kDoublingBase) - PoorestDoublings;
             NormalizedWealth = Mathf.Clamp01(AverageDoublingsOfIncome / RichestDoublings);
 
             Updated.TryInvoke(this);
@@ -43,21 +40,25 @@ namespace PoorFamily.Simulation
 
         public float CalculateAverageDoublingsOfIncome()
         {
+            PoorestDoublings = Mathf.Log(PoorestIncome, kDoublingBase);
+            RichestDoublings = Mathf.Log(RichestIncome, kDoublingBase) - PoorestDoublings;
+
             int numHumans = Humans.Count;
             if (numHumans == 0)
             {
                 return 0f;
             }
 
-            float PoorestDoublings = Mathf.Log(PoorestIncome, kDoublingBase);
             float sum = 0f;
             foreach (Human human in Humans)
             {
                 human.DoublingsOfIncome = Mathf.Log(human.Income, kDoublingBase) - PoorestDoublings;
+                human.NormalizedWealth = Mathf.Clamp01(human.DoublingsOfIncome / RichestDoublings);
                 sum += human.DoublingsOfIncome;
             }
 
-            return sum / numHumans;
+            float averageWealth = sum / numHumans;
+            return averageWealth;
         }
     }
 }

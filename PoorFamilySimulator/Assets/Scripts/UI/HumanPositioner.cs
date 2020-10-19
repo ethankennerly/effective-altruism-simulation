@@ -17,11 +17,37 @@ namespace PoorFamily.UI
 
         public void UpdatePositions(Simulator simulator)
         {
+            PositionHumans(simulator);
+            PositionAverage(simulator);
+        }
+
+        private void PositionHumans(Simulator simulator)
+        {
             if (HumanTransforms == null)
             {
                 HumanTransforms = new List<Transform>();
             }
 
+            int numHumans = simulator.Humans.Count;
+            for (int numTransforms = HumanTransforms.Count; numTransforms < numHumans; ++numTransforms)
+            {
+                GameObject humanObject = UnityEngine.Object.Instantiate(HumanPrefab, HumanRoot);
+                HumanTransforms.Add(humanObject.transform);
+            }
+
+            int humanIndex = 0;
+            foreach (Transform humanTransform in HumanTransforms)
+            {
+                float lerpAmount = simulator.Humans[humanIndex].NormalizedWealth;
+                Vector3 humanPosition = Vector3.Lerp(
+                    PoorestTransform.localPosition, RichestTransform.localPosition, lerpAmount);
+                humanTransform.localPosition = humanPosition;
+                humanIndex++;
+            }
+        }
+
+        private void PositionAverage(Simulator simulator)
+        {
             float lerpAmount = simulator.NormalizedWealth;
             Vector3 normalizedPosition = Vector3.Lerp(
                 PoorestTransform.localPosition, RichestTransform.localPosition, lerpAmount);
