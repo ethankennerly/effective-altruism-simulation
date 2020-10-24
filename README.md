@@ -56,9 +56,10 @@ The following features have not been prioritized or implemented.
 ### Future Human Properties
 
 - Age
+- Gender: Female or male.
 - [Birth Rate](https://en.wikipedia.org/wiki/Birth_rate)
 - Birth Per Life-Years
-- Age Range To Give Birth
+- Fertile Age Range
     - Min
     - Max
 
@@ -71,7 +72,6 @@ To simply simulate probabilities, the expected value will be used for rates. For
 - Life Expectancy
 - Alive
 - Survival Rate
-- Gender: Female or male.
 - Capital: Multiplier of income.
 - Wealth
 - Independence (dependents need care)
