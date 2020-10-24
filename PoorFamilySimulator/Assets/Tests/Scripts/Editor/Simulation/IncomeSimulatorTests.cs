@@ -27,5 +27,23 @@ namespace PoorFamily.Tests.Simulation
             incomeSim.AddYears(3f);
             Assert.AreEqual(6f, humans[0].Income);
         }
+
+        [Test]
+        public void AddYears_Age40RaisePerYearNegative2_Income20()
+        {
+            List<Human> humans = new List<Human>{new Human()};
+            IncomeSimulator incomeSim = new IncomeSimulator(humans);
+            incomeSim.MinAge = 10f;
+            incomeSim.RaisePerYear = 2f;
+            incomeSim.PeakAge = 10f;
+            incomeSim.RaisePerYearAfterPeak = -2f;
+            Human.AddAgeToEach(humans, 10f);
+            incomeSim.AddYears(10f);
+            Human.AddAgeToEach(humans, 10f);
+            incomeSim.AddYears(10f);
+            Human.AddAgeToEach(humans, 10f);
+            incomeSim.AddYears(10f);
+            Assert.AreEqual(20f, humans[0].Income);
+        }
     }
 }

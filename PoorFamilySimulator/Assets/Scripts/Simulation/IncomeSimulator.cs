@@ -8,6 +8,8 @@ namespace PoorFamily.Simulation
     {
         public float MinAge = 10f;
         public float RaisePerYear = 2f;
+        public float PeakAge = 30f;
+        public float RaisePerYearAfterPeak = -2f;
 
         private readonly List<Human> m_Humans;
 
