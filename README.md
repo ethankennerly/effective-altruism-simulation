@@ -70,18 +70,26 @@ The following features have not been prioritized or implemented.
 
 ## Future Human Features
 
+### Income Simulator
+
 - Income correlates to age.
     - Delta income.
 - Birth rate correlates to income.
 - Life expectancy correlates to income.
 - Donate to income
 
+### Malaria Simulator
+
 - Income correlates to malaria.
 - Life expectancy correlates to malaria.
 - Donate to prevent malaria.
 
+### Worm Simulator
+
 - Income correlates to worms.
 - Donate to deworming
+
+### Literacy Simulator
 
 - Income correlates to literacy.
 - Birth rate correlates to female literacy.

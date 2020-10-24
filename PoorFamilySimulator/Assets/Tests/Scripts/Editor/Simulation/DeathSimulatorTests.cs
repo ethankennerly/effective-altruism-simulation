@@ -14,7 +14,8 @@ namespace PoorFamily.Tests.Simulation
         {
             List<Human> humans = new List<Human>();
             DeathSimulator simulator = new DeathSimulator(humans);
-            simulator.AddYears(0f);
+            Human.AddAgeToEach(humans, 0f);
+            simulator.TryDeath();
             Assert.AreEqual(0, humans.Count);
         }
 
@@ -23,7 +24,8 @@ namespace PoorFamily.Tests.Simulation
         {
             List<Human> humans = SetUpHumansLifeExpectancy54And56();
             DeathSimulator simulator = new DeathSimulator(humans);
-            simulator.AddYears(53f);
+            Human.AddAgeToEach(humans, 53f);
+            simulator.TryDeath();
             Assert.AreEqual(2, humans.Count);
         }
 
@@ -32,7 +34,8 @@ namespace PoorFamily.Tests.Simulation
         {
             List<Human> humans = SetUpHumansLifeExpectancy54And56();
             DeathSimulator simulator = new DeathSimulator(humans);
-            simulator.AddYears(54f);
+            Human.AddAgeToEach(humans, 54f);
+            simulator.TryDeath();
             Assert.AreEqual(1, humans.Count);
         }
 
@@ -41,7 +44,8 @@ namespace PoorFamily.Tests.Simulation
         {
             List<Human> humans = SetUpHumansLifeExpectancy54And56();
             DeathSimulator simulator = new DeathSimulator(humans);
-            simulator.AddYears(56f);
+            Human.AddAgeToEach(humans, 56f);
+            simulator.TryDeath();
             Assert.AreEqual(0, humans.Count);
         }
 

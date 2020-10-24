@@ -48,20 +48,12 @@ namespace PoorFamily.Simulation
             NumHumans = m_Humans.Count;
             HistoricalBirthRate = CalculateHistoricalBirthRate(deltaYears);
             m_ExpectedBirthRate = CalculateExpectedBirthRate(m_Humans);
-            AddAgeToHumans(deltaYears);
+            Human.AddAgeToEach(m_Humans, deltaYears);
 
             if (!m_TriedBirthThisYear)
             {
                 m_TriedBirthThisYear = true;
                 TryBirth();
-            }
-        }
-
-        private void AddAgeToHumans(float deltaYears)
-        {
-            foreach (Human human in m_Humans)
-            {
-                human.Age += deltaYears;
             }
         }
 

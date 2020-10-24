@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace PoorFamily.Simulation
@@ -13,9 +14,17 @@ namespace PoorFamily.Simulation
 
         [Header("Reproduction")]
         [Range(0f, 130f)] public float Age;
-        [Range(0f, 130f)] public float LifeExpectancy;
+        [Range(0f, 130f)] public float LifeExpectancy = 55f;
         public bool IsFemale;
         [Range(0f, 0.07f)] public float BirthRate;
         public FloatRange FertileAgeRange;
+
+        public static void AddAgeToEach(List<Human> humans, float deltaYears)
+        {
+            foreach (Human human in humans)
+            {
+                human.Age += deltaYears;
+            }
+        }
     }
 }

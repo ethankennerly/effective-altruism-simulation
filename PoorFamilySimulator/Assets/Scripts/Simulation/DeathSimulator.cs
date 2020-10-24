@@ -1,12 +1,7 @@
-using System;
 using System.Collections.Generic;
-using System.Text;
-
-using Debug = UnityEngine.Debug;
 
 namespace PoorFamily.Simulation
 {
-    [Serializable]
     public sealed class DeathSimulator
     {
         private readonly List<Human> m_Humans;
@@ -27,20 +22,6 @@ namespace PoorFamily.Simulation
                 }
 
                 m_Humans.RemoveAt(humanIndex);
-            }
-        }
-
-        public void AddYears(float deltaYears)
-        {
-            AddAgeToHumans(deltaYears);
-            TryDeath();
-        }
-
-        private void AddAgeToHumans(float deltaYears)
-        {
-            foreach (Human human in m_Humans)
-            {
-                human.Age += deltaYears;
             }
         }
     }
