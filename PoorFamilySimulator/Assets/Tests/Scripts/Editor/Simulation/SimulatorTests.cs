@@ -2,7 +2,7 @@ using NUnit.Framework;
 using PoorFamily.Simulation;
 using System;
 
-namespace PoorFamily.Simulation.Tests
+namespace PoorFamily.Tests.Simulation
 {
     public sealed class SimulatorTests
     {

@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PoorFamily.UI.Tests
+namespace PoorFamily.Tests.UI
 {
     public sealed class HumanPositionerTests
     {
