@@ -14,7 +14,7 @@ namespace PoorFamily.Tests.Simulation
         }
 
         [Test]
-        public void AverageDoublingsOfIncome_0AddTime_Equals0()
+        public void AverageDoublingsOfIncome_0AddTime_ClampsTo0()
         {
             Simulator simulator = new Simulator{PoorestIncome = 100};
             Human income0 = new Human{Income = 0};

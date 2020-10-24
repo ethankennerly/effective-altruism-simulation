@@ -57,7 +57,9 @@ namespace PoorFamily.Simulation
             float sum = 0f;
             foreach (Human human in Humans)
             {
-                human.DoublingsOfIncome = Mathf.Log(human.Income, kDoublingBase) - PoorestDoublings;
+                human.DoublingsOfIncome = human.Income <= 1f ?
+                    0f :
+                    Mathf.Log(human.Income, kDoublingBase) - PoorestDoublings;
                 human.NormalizedIncome = Mathf.Clamp01(human.DoublingsOfIncome / RichestDoublings);
                 sum += human.DoublingsOfIncome;
             }
