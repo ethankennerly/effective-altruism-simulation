@@ -119,6 +119,7 @@ namespace PoorFamily.Simulation
             {
                 Human child = new Human
                 {
+                    LifeExpectancy = 55,
                     IsFemale = m_NextChildIsFemale,
                     BirthRate = m_ExpectedBirthRate,
                     FertileAgeRange = new FloatRange

@@ -25,10 +25,12 @@ namespace PoorFamily.Simulation
         public List<Human> Humans = new List<Human>();
 
         public BirthSimulator BirthSimulator;
+        private DeathSimulator m_DeathSimulator;
 
         public Simulator()
         {
             BirthSimulator = new BirthSimulator(Humans);
+            m_DeathSimulator = new DeathSimulator(Humans);
             Updated.SetValue(this);
         }
 
@@ -36,6 +38,7 @@ namespace PoorFamily.Simulation
         {
             YearTimer.AddYears(deltaTime);
             BirthSimulator.AddYears(deltaTime);
+            m_DeathSimulator.TryDeath();
 
             AverageDoublingsOfIncome = CalculateAverageDoublingsOfIncome();
             NormalizedIncome = Mathf.Clamp01(AverageDoublingsOfIncome / RichestDoublings);

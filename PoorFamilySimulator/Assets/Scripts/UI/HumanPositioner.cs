@@ -37,10 +37,11 @@ namespace PoorFamily.UI
                 HumanTransforms.Add(humanObject.transform);
             }
 
-            for (int transformIndex = HumanTransforms.Count - 1; transformIndex > numHumans; --transformIndex)
+            for (int transformIndex = HumanTransforms.Count - 1; transformIndex >= numHumans; --transformIndex)
             {
                 Transform humanTransform = HumanTransforms[transformIndex];
-                UnityEngine.Object.Destroy(humanTransform);
+                HumanTransforms.RemoveAt(transformIndex);
+                UnityEngine.Object.Destroy(humanTransform.gameObject);
             }
 
             int humanIndex = 0;
