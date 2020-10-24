@@ -73,6 +73,13 @@ namespace PoorFamily.Tests.Simulation
         }
 
         [Test]
+        public void AddYears_TwoHumansHalfOfBirthPerLifeYear_ChildHasLifeExpectancyOf55()
+        {
+            Human child = AssertTwoHumansHalfOfBirthPerLifeYear_GetOneChild();
+            Assert.AreEqual(55, child.LifeExpectancy);
+        }
+
+        [Test]
         public void AddYears_TwoHumansHalfOfBirthPerLifeYear_ChildAgeEquals0()
         {
             Human child = AssertTwoHumansHalfOfBirthPerLifeYear_GetOneChild();

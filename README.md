@@ -71,11 +71,11 @@ The following features have not been prioritized or implemented.
 
 ### Future Human Properties
 
+- Life Expectancy
 - Literacy
 - Children
 - Living Expenses
 - Parents
-- Life Expectancy
 - Alive
 - Survival Rate
 - Capital: Multiplier of income.

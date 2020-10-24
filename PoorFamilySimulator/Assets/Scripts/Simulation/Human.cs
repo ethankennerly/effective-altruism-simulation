@@ -13,6 +13,7 @@ namespace PoorFamily.Simulation
 
         [Header("Reproduction")]
         [Range(0f, 130f)] public float Age;
+        [Range(0f, 130f)] public float LifeExpectancy;
         public bool IsFemale;
         [Range(0f, 0.07f)] public float BirthRate;
         public FloatRange FertileAgeRange;

@@ -55,6 +55,7 @@ MonoBehaviour:
       DoublingsOfIncome: 0
       NormalizedIncome: 0
       Age: 0
+      LifeExpectancy: 55
       IsFemale: 1
       BirthRate: 0.04
       FertileAgeRange:
@@ -64,6 +65,7 @@ MonoBehaviour:
       DoublingsOfIncome: 0
       NormalizedIncome: 0
       Age: 0
+      LifeExpectancy: 55
       IsFemale: 0
       BirthRate: 0.04
       FertileAgeRange:
