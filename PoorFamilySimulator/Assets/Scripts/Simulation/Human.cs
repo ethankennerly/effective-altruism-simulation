@@ -8,7 +8,7 @@ namespace PoorFamily.Simulation
     public sealed class Human
     {
         [Header("Income")]
-        [Range(100f, 102400f)] public float Income;
+        [Range(0f, 102400f)] public float Income;
         [Range(0f, 10f)] public float DoublingsOfIncome;
         [Range(0f, 1f)] public float NormalizedIncome;
 

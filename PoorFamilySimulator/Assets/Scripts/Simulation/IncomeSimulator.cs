@@ -7,9 +7,9 @@ namespace PoorFamily.Simulation
     public sealed class IncomeSimulator
     {
         public float MinAge = 10f;
-        public float RaisePerYear = 2f;
+        public float RaisePerYear = 30f;
         public float PeakAge = 30f;
-        public float RaisePerYearAfterPeak = -2f;
+        public float RaisePerYearAfterPeak = -20f;
 
         private readonly List<Human> m_Humans;
 
