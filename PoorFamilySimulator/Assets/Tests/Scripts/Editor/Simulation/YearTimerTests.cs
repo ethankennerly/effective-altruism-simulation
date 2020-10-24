@@ -31,5 +31,13 @@ namespace PoorFamily.Tests.Simulation
             timer.AddYears(200f);
             Assert.AreEqual(2113, timer.GetYear());
         }
+
+        [Test]
+        public void AddYears_200_ClampsDeltaTo100()
+        {
+            YearTimer timer = new YearTimer(2013, 100);
+            timer.AddYears(200f);
+            Assert.AreEqual(100f, timer.DeltaYears);
+        }
     }
 }

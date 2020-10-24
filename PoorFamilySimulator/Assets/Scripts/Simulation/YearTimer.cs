@@ -9,6 +9,8 @@ namespace PoorFamily.Simulation
     {
         public ActionEvent<string> TextChanged = new ActionEvent<string>();
 
+        public float DeltaYears { get; }
+
         private int m_CurrentYear;
 
         private int m_EndYear;
