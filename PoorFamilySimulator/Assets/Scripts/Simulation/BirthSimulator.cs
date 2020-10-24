@@ -1,4 +1,4 @@
-// using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +6,7 @@ using Debug = UnityEngine.Debug;
 
 namespace PoorFamily.Simulation
 {
-    // Inspectable [Serializable]
+    [Serializable]
     public sealed class BirthSimulator
     {
         public float HistoricalBirthRate;
@@ -80,7 +80,8 @@ namespace PoorFamily.Simulation
             bool anyFertileMale = false;
             foreach (Human human in m_Humans)
             {
-                if (human.Age < human.FertileAgeRange.Min ||
+                if (human.FertileAgeRange == null ||
+                    human.Age < human.FertileAgeRange.Min ||
                     human.Age > human.FertileAgeRange.Max)
                 {
                     continue;

@@ -41,9 +41,22 @@ To account for mourning the recently deceased, deceased members continue to be a
 
 ### Human Properties
 
+#### Income
+
 - Income
 - Doublings Of Poorest Income
 - Normalized Income
+
+#### Reproduction
+
+- Age
+- Gender: Female or male.
+- [Birth Rate](https://en.wikipedia.org/wiki/Birth_rate)
+- Fertile Age Range
+    - Min
+    - Max
+
+To simply simulate probabilities, the expected value will be used for rates. For example, with a birth rate of 4%, the would be a birth per 25 life-years. Since it is a binary decision, the two outcomes are averaged. When the average would equal 4% and there is an eligible female, a child birth is attempted. Example, with 1 male and 1 female both at 12 years of age, that is 24 life-years. The actual birth rate is 0%. The expected birth rate is 4%. Yet the preceding 24 life-years had 0% birth rate, which draws down the average. To maintain the average, about 12 years would be above the expected birth rate and about 12 years below the expected birth rate. So the first child would be attempted at about 13 life-years, and the next around 38 life-years. Life-years is the sum of the ages of all living.
 
 # Future Features
 
@@ -54,16 +67,6 @@ The following features have not been prioritized or implemented.
 ## Future Human Features
 
 ### Future Human Properties
-
-- Age
-- Gender: Female or male.
-- [Birth Rate](https://en.wikipedia.org/wiki/Birth_rate)
-- Birth Per Life-Years
-- Fertile Age Range
-    - Min
-    - Max
-
-To simply simulate probabilities, the expected value will be used for rates. For example, with a birth rate of 4%, the would be a birth per 25 life-years. Since it is a binary decision, the two outcomes are averaged. When the average would equal 4% and there is an eligible female, a child birth is attempted. Example, with 1 male and 1 female both at 12 years of age, that is 24 life-years. The actual birth rate is 0%. The expected birth rate is 4%. Yet the preceding 24 life-years had 0% birth rate, which draws down the average. To maintain the average, about 12 years would be above the expected birth rate and about 12 years below the expected birth rate. So the first child would be attempted at about 13 life-years, and the next around 38 life-years. Life-years is the sum of the ages of all living.
 
 - Literacy
 - Children

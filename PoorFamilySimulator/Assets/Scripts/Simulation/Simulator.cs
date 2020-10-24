@@ -24,14 +24,19 @@ namespace PoorFamily.Simulation
 
         public List<Human> Humans = new List<Human>();
 
+        public BirthSimulator BirthSimulator;
+
         public Simulator()
         {
+            BirthSimulator = new BirthSimulator(Humans);
             Updated.SetValue(this);
         }
 
         public void AddTime(float deltaTime)
         {
             YearTimer.AddYears(deltaTime);
+            BirthSimulator.AddYears(deltaTime);
+
             AverageDoublingsOfIncome = CalculateAverageDoublingsOfIncome();
             NormalizedIncome = Mathf.Clamp01(AverageDoublingsOfIncome / RichestDoublings);
 

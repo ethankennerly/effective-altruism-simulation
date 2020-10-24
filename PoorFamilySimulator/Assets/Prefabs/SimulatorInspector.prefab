@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2379592858208767709}
   - component: {fileID: 7303820927321111072}
   m_Layer: 0
-  m_Name: MainInspector
+  m_Name: SimulatorInspector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,10 +44,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Simulator:
-    PoorestIncome: 100
     AverageDoublingsOfIncome: 0
+    NormalizedIncome: 0
+    PoorestIncome: 100
+    RichestIncome: 102400
+    PoorestDoublings: 0
+    RichestDoublings: 0
     Humans:
     - Income: 200
       DoublingsOfIncome: 0
+      NormalizedIncome: 0
+      Age: 0
+      IsFemale: 1
+      BirthRate: 0.04
+      FertileAgeRange:
+        Min: 14
+        Max: 42
     - Income: 400
       DoublingsOfIncome: 0
+      NormalizedIncome: 0
+      Age: 0
+      IsFemale: 0
+      BirthRate: 0.04
+      FertileAgeRange:
+        Min: 14
+        Max: 70
+    BirthSimulator:
+      HistoricalBirthRate: 0
+      NumHumans: 0
