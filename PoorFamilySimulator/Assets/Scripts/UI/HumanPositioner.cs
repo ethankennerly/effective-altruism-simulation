@@ -13,6 +13,8 @@ namespace PoorFamily.UI
         public Transform PoorestTransform = null;
         public Transform RichestTransform = null;
         public Transform AverageTransform = null;
+        public Transform Age0Transform = null;
+        public Transform Age100Transform = null;
         public List<Transform> HumanTransforms = null;
 
         public void UpdatePositions(Simulator simulator)
@@ -38,9 +40,22 @@ namespace PoorFamily.UI
             int humanIndex = 0;
             foreach (Transform humanTransform in HumanTransforms)
             {
-                float lerpAmount = simulator.Humans[humanIndex].NormalizedIncome;
+                Human human = simulator.Humans[humanIndex];
+                
                 Vector3 humanPosition = Vector3.Lerp(
-                    PoorestTransform.localPosition, RichestTransform.localPosition, lerpAmount);
+                    PoorestTransform.localPosition,
+                    RichestTransform.localPosition,
+                    human.NormalizedIncome);
+
+                if (Age0Transform != null && Age100Transform != null)
+                {
+                    float normalizedAge = human.Age * 0.01f;
+                    humanPosition.y = Mathf.Lerp(
+                        Age0Transform.localPosition.y,
+                        Age100Transform.localPosition.y,
+                        normalizedAge);
+                }
+                
                 humanTransform.localPosition = humanPosition;
                 humanIndex++;
             }

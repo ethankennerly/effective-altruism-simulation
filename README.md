@@ -50,6 +50,9 @@ To account for mourning the recently deceased, deceased members continue to be a
 #### Reproduction
 
 - Age
+
+Age is represented as a vertical position from bottom 0 to top 100.
+
 - Gender: Female or male.
 - [Birth Rate](https://en.wikipedia.org/wiki/Birth_rate)
 - Fertile Age Range
