@@ -35,8 +35,10 @@ namespace PoorFamily.Tests.Simulation
             IncomeSimulator incomeSim = new IncomeSimulator(humans);
             incomeSim.MinAge = 10f;
             incomeSim.RaisePerYear = 2f;
-            incomeSim.PeakAge = 10f;
+            incomeSim.PeakAge = 30f;
             incomeSim.RaisePerYearAfterPeak = -2f;
+            Human.AddAgeToEach(humans, 10f);
+            incomeSim.AddYears(10f);
             Human.AddAgeToEach(humans, 10f);
             incomeSim.AddYears(10f);
             Human.AddAgeToEach(humans, 10f);

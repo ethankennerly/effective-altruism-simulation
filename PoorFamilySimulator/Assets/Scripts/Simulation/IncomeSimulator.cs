@@ -21,10 +21,17 @@ namespace PoorFamily.Simulation
         public void AddYears(float deltaYears)
         {
             float deltaIncome = RaisePerYear * deltaYears;
+            float deltaIncomeAfterPeak = RaisePerYearAfterPeak * deltaYears;
             foreach (Human human in m_Humans)
             {
                 if (human.Age <= MinAge)
                 {
+                    continue;
+                }
+
+                if (human.Age > PeakAge)
+                {
+                    human.Income += deltaIncomeAfterPeak;
                     continue;
                 }
 
