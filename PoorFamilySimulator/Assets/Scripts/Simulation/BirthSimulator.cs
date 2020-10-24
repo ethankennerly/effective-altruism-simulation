@@ -9,6 +9,9 @@ namespace PoorFamily.Simulation
     public sealed class BirthSimulator
     {
         public float ActualBirthRate;
+        private float m_ExpectedBirthRate;
+        private List<float> m_BirthRateHistory = new List<float>();
+        private float m_PartialYears;
 
         private readonly List<Human> m_Humans;
 
@@ -17,7 +20,12 @@ namespace PoorFamily.Simulation
             m_Humans = humans;
         }
 
-        public void TryBirth()
+        public void AddYears(float deltaYears)
+        {
+            TryBirth();
+        }
+
+        private void TryBirth()
         {
             Debug.LogWarning("TODO: Try Birth");
         }
