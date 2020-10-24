@@ -50,6 +50,7 @@ To account for mourning the recently deceased, deceased members continue to be a
 #### Reproduction
 
 - Age
+- Life Expectancy
 
 Age is represented as a vertical position from bottom 0 to top 100.
 
@@ -69,25 +70,20 @@ The following features have not been prioritized or implemented.
 
 ## Future Human Features
 
-### Future Human Properties
+- Income correlates to age.
+    - Delta income.
+- Birth rate correlates to income.
+- Life expectancy correlates to income.
+- Donate to income
 
-- Life Expectancy
-- Literacy
-- Children
-- Living Expenses
-- Parents
-- Alive
-- Survival Rate
-- Capital: Multiplier of income.
-- Wealth
-- Independence (dependents need care)
+- Income correlates to malaria.
+- Life expectancy correlates to malaria.
+- Donate to prevent malaria.
 
-### Future Human Actions
+- Income correlates to worms.
+- Donate to deworming
 
-- Die.
-- Survive.
-- Care for a child or a parent.
-- Work.
-- Have a child.
-- Learn to read.
-- Play.
+- Income correlates to literacy.
+- Birth rate correlates to female literacy.
+- Life expectancy correlates to literacy.
+- Donate to literacy
