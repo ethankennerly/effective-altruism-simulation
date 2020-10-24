@@ -55,39 +55,70 @@ namespace PoorFamily.Tests.Simulation
         public void TryBirth_FemaleAndMaleInFertileAgeRange_ThreeHumans()
         {
             List<Human> humans = SetUpHumansOneYearBeforeFemaleIsFertile();
-            Human female = humans[0];
             BirthSimulator simulator = new BirthSimulator(humans);
+            Human female = humans[0];
             female.Age++;
             simulator.TryBirth();
             Assert.AreEqual(3, humans.Count);
         }
 
         [Test]
-        public void TryBirth_TwoHumansMaxOneChildPerFemalePerYear_ThreeHumans()
+        public void TryBirth_TwoHumansHalfOfBirthPerLifeYear_ThreeHumans()
         {
-            AssertTwoHumansMaxOneChildPerFemalePerYear_GetOneChild();
+            AssertTwoHumansHalfOfBirthPerLifeYear_GetOneChild();
         }
 
         [Test]
-        public void TryBirth_TwoHumansMaxOneChildPerFemalePerYear_ChildIsFemale()
+        public void TryBirth_TwoHumansHalfOfBirthPerLifeYear_ChildIsFemale()
         {
-            Human child = AssertTwoHumansMaxOneChildPerFemalePerYear_GetOneChild();
+            Human child = AssertTwoHumansHalfOfBirthPerLifeYear_GetOneChild();
             Assert.IsTrue(child.IsFemale);
         }
 
         [Test]
-        public void TryBirth_TwoHumansMaxOneChildPerFemalePerYear_ChildAgeEquals0()
+        public void TryBirth_TwoHumansHalfOfBirthPerLifeYear_ChildAgeEquals0()
         {
-            Human child = AssertTwoHumansMaxOneChildPerFemalePerYear_GetOneChild();
+            Human child = AssertTwoHumansHalfOfBirthPerLifeYear_GetOneChild();
             Assert.AreEqual(0f, child.Age);
         }
 
-        private static Human AssertTwoHumansMaxOneChildPerFemalePerYear_GetOneChild()
+        [Test]
+        public void TryBirth_38LifeYears_4Humans()
         {
             List<Human> humans = SetUpHumansOneYearBeforeFemaleIsFertile();
             BirthSimulator simulator = new BirthSimulator(humans);
-            humans[0].Age += 20f;
-            humans[1].Age += 20f;
+            simulator.TryBirth();
+            foreach (Human human in humans)
+            {
+                human.Age += 3.5f;
+            }
+            simulator.TryBirth();
+            Assert.AreEqual(4, humans.Count);
+        }
+
+        [Test]
+        public void ActualBirthRate_For100Years_Between30And50Per1000()
+        {
+            List<Human> humans = SetUpHumansOneYearBeforeFemaleIsFertile();
+            BirthSimulator simulator = new BirthSimulator(humans);
+            float yearIncrement = 1f / 32f;
+            for (float years = 0f; years < 100f; years += yearIncrement)
+            {
+                foreach (Human human in humans)
+                {
+                    human.Age += yearIncrement;
+                }
+                simulator.TryBirth();
+            }
+            Assert.That(simulator.ActualBirthRate, Is.EqualTo(0.04f).Within(0.01f));
+        }
+
+        private static Human AssertTwoHumansHalfOfBirthPerLifeYear_GetOneChild()
+        {
+            List<Human> humans = SetUpHumansOneYearBeforeFemaleIsFertile();
+            BirthSimulator simulator = new BirthSimulator(humans);
+            Human female = humans[0];
+            female.Age++;
             simulator.TryBirth();
             Assert.AreEqual(3, humans.Count, "Number of humans after one new child birth");
             Human child = humans[2];
