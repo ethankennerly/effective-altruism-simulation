@@ -15,13 +15,16 @@ namespace PoorFamily.Tests.Simulation
         }
 
         [Test]
-        public void AddYears_Age13DeltaIncome2_Income6()
+        public void AddYears_Age13RaisePerYear2_Income6()
         {
             List<Human> humans = new List<Human>{new Human()};
             IncomeSimulator incomeSim = new IncomeSimulator(humans);
             incomeSim.MinAge = 10f;
-            incomeSim.DeltaIncome = 2f;
-            incomeSim.AddYears(13f);
+            incomeSim.RaisePerYear = 2f;
+            Human.AddAgeToEach(humans, 10f);
+            incomeSim.AddYears(10f);
+            Human.AddAgeToEach(humans, 3f);
+            incomeSim.AddYears(3f);
             Assert.AreEqual(6f, humans[0].Income);
         }
     }

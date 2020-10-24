@@ -7,7 +7,7 @@ namespace PoorFamily.Simulation
     public sealed class IncomeSimulator
     {
         public float MinAge = 10f;
-        public float DeltaIncome = 2f;
+        public float RaisePerYear = 2f;
 
         private readonly List<Human> m_Humans;
 
@@ -18,8 +18,15 @@ namespace PoorFamily.Simulation
 
         public void AddYears(float deltaYears)
         {
+            float deltaIncome = RaisePerYear * deltaYears;
             foreach (Human human in m_Humans)
             {
+                if (human.Age <= MinAge)
+                {
+                    continue;
+                }
+
+                human.Income += deltaIncome;
             }
         }
     }
