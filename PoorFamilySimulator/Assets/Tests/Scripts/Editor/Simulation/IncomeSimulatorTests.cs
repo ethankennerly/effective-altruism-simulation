@@ -7,6 +7,8 @@ namespace PoorFamily.Tests.Simulation
 {
     public sealed class IncomeSimulatorTests
     {
+        #region Raise
+
         [Test]
         public void AddYears_ZeroHumans_NoError()
         {
@@ -48,6 +50,10 @@ namespace PoorFamily.Tests.Simulation
             Assert.AreEqual(20f, humans[0].Income);
         }
 
+        #endregion Raise
+
+        #region Birth Rate
+
         [Test]
         public void AddYears_Income400_BirthRateReducedTwice()
         {
@@ -58,5 +64,62 @@ namespace PoorFamily.Tests.Simulation
             incomeSim.AddYears(1f / 1024f);
             Assert.AreEqual(1f / 16f - 1f / 128f, humans[0].BirthRate);
         }
+
+        #endregion Birth Rate
+
+        #region Normalized Income
+
+        [Test]
+        public void CalculateAverageDoublingsOfIncome_ZeroHumans_Zero()
+        {
+            IncomeSimulator incomeSim = new IncomeSimulator(new List<Human>());
+            Assert.AreEqual(0f, incomeSim.CalculateAverageDoublingsOfIncome());
+        }
+
+        [Test]
+        public void AverageDoublingsOfIncome_0AddYears_ClampsTo0()
+        {
+            IncomeSimulator incomeSim = new IncomeSimulator(new List<Human>{new Human()});
+            incomeSim.AddYears(0.001f);
+            Assert.AreEqual(0f, incomeSim.AverageDoublingsOfIncome);
+        }
+
+        [Test]
+        public void AverageDoublingsOfIncome_6400And1600ThenAddYears_Equals5()
+        {
+            List<Human> humans = new List<Human>
+            {
+                new Human{Income = 6400},
+                new Human{Income = 1600}
+            };
+            IncomeSimulator incomeSim = new IncomeSimulator(humans);
+            incomeSim.PoorestIncome = 100;
+            incomeSim.AddYears(0.001f);
+            Assert.AreEqual(5f, incomeSim.AverageDoublingsOfIncome);
+        }
+
+        [Test]
+        public void NormalizedIncome_ZeroHumans_Zero()
+        {
+            IncomeSimulator incomeSim = new IncomeSimulator(new List<Human>());
+            incomeSim.AddYears(0.001f);
+            Assert.AreEqual(0f, incomeSim.NormalizedIncome);
+        }
+
+        [Test]
+        public void NormalizedIncome_6400And1600ThenAddYears_EqualsHalf()
+        {
+            List<Human> humans = new List<Human>
+            {
+                new Human{Income = 6400},
+                new Human{Income = 1600}
+            };
+            IncomeSimulator incomeSim = new IncomeSimulator(humans);
+            incomeSim.PoorestIncome = 100;
+            incomeSim.AddYears(0.001f);
+            Assert.AreEqual(0.5f, incomeSim.NormalizedIncome);
+        }
+
+        #endregion Normalized Income
     }
 }

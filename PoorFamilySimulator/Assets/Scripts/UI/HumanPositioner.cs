@@ -70,7 +70,7 @@ namespace PoorFamily.UI
 
         private void PositionAverage(Simulator simulator)
         {
-            float lerpAmount = simulator.NormalizedIncome;
+            float lerpAmount = simulator.Income.NormalizedIncome;
             Vector3 normalizedPosition = Vector3.Lerp(
                 PoorestTransform.localPosition, RichestTransform.localPosition, lerpAmount);
             AverageTransform.localPosition = normalizedPosition;
