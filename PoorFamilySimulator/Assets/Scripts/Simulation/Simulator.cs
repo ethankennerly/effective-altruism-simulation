@@ -39,8 +39,9 @@ namespace PoorFamily.Simulation
         public void AddTime(float deltaTime)
         {
             YearTimer.AddYears(deltaTime);
-            BirthSimulator.AddYears(deltaTime);
-            IncomeSimulator.AddYears(deltaTime);
+            float deltaYears = YearTimer.DeltaYears;
+            BirthSimulator.AddYears(deltaYears);
+            IncomeSimulator.AddYears(deltaYears);
             m_DeathSimulator.TryDeath();
 
             AverageDoublingsOfIncome = CalculateAverageDoublingsOfIncome();
