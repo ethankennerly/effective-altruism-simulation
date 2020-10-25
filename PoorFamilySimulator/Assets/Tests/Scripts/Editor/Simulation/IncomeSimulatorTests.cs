@@ -93,6 +93,25 @@ namespace PoorFamily.Tests.Simulation
 
         #endregion Income Scheduler
 
+        #region Share Income
+
+        [Test]
+        public void AddYears_TwoHumansShareIncome_EqualIncome()
+        {
+            List<Human> humans = new List<Human>
+            {
+                new Human{Income = 6400},
+                new Human{Income = 1600}
+            };
+            IncomeSimulator incomeSim = new IncomeSimulator(humans);
+            incomeSim.ShareIncome = true;
+            incomeSim.AddYears(1f);
+            Assert.AreEqual(4000f, humans[0].Income, "Was 6400");
+            Assert.AreEqual(4000f, humans[1].Income, "Was 1600");
+        }
+
+        #endregion Share Income
+
         #region Normalized Income
 
         [Test]

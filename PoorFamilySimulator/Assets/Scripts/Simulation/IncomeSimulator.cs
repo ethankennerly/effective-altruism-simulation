@@ -188,6 +188,12 @@ namespace PoorFamily.Simulation
 
         #endregion Scheduling Transfers
 
+        #region Income Sharing
+
+        public bool ShareIncome;
+
+        #endregion Income Sharing
+
         public float CalculateAverageDoublingsOfIncome()
         {
             CalculateNormalizedIncome();

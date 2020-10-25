@@ -55,7 +55,7 @@ To account for mourning the recently deceased, deceased members continue to be a
 #### GiveDirectly
 
 Donate to income by [GiveWell's model of GiveDirectly](https://docs.google.com/spreadsheets/d/1BmFwVYeGMkpys6hG0tnfHyq__ZFZf-bmXYLSHODGpLY/edit#gid=1680005064&range=B20:B24).
-- 83% of cash reaches the family
+- 83% of cash reaches the family. Donating $1205 sends $1000 to the family.
 - About $210 per person of household size 4.7 for each $1000 reaching a household.
 - Baseline income $290 per person.
 - First Year +$130. Ln Consumption +0.37 (Log2: +0.53)
