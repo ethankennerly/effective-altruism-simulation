@@ -10,6 +10,8 @@ namespace PoorFamily.Simulation
         public float RaisePerYear = 30f;
         public float PeakAge = 30f;
         public float RaisePerYearAfterPeak = -20f;
+        public float BirthRateAtPoorestIncome = 1f / 16f;
+        public float BirthRatePerDoublingOfIncome = -1f / 256f;
 
         private readonly List<Human> m_Humans;
 

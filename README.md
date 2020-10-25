@@ -46,6 +46,8 @@ To account for mourning the recently deceased, deceased members continue to be a
 - Income
 - Doublings Of Poorest Income
 - Normalized Income
+- Income correlates to age.
+    - Delta income.
 
 #### Reproduction
 
@@ -70,10 +72,6 @@ The following features have not been prioritized or implemented.
 
 ## Future Human Features
 
-### Income Simulator
-
-- Income correlates to age.
-    - Delta income.
 - Birth rate correlates to income.
 - Life expectancy correlates to income.
 - Donate to income
