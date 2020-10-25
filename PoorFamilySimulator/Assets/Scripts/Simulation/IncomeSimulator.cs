@@ -38,6 +38,8 @@ namespace PoorFamily.Simulation
 
             AverageDoublingsOfIncome = CalculateAverageDoublingsOfIncome();
             NormalizedIncome = Mathf.Clamp01(AverageDoublingsOfIncome / RichestDoublings);
+
+            CalculateBirthRateByIncome();
         }
 
         private void CalculateRaise(float deltaYears)
@@ -58,6 +60,15 @@ namespace PoorFamily.Simulation
                 }
 
                 human.Income += deltaIncome;
+            }
+        }
+
+        private void CalculateBirthRateByIncome()
+        {
+            foreach (Human human in m_Humans)
+            {
+                human.BirthRate = BirthRateAtPoorestIncome +
+                    human.DoublingsOfIncome * BirthRatePerDoublingOfIncome;
             }
         }
 
