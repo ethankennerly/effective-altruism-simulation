@@ -52,6 +52,20 @@ To account for mourning the recently deceased, deceased members continue to be a
 - Life expectancy correlates to income by a [Preston curve](https://en.wikipedia.org/wiki/Preston_curve).
     - Income may only be a indirect correlation, as seen by [correlations to sanitation, infant survival](https://blog.euromonitor.com/economic-growth-and-life-expectancy-do-wealthier-countries-live-longer/).
 
+#### GiveDirectly
+
+Donate to income by [GiveWell's model of GiveDirectly](https://docs.google.com/spreadsheets/d/1BmFwVYeGMkpys6hG0tnfHyq__ZFZf-bmXYLSHODGpLY/edit#gid=1680005064&range=B20:B24).
+- 83% of cash reaches the family
+- About $210 per person of household size 4.7 for each $1000 reaching a household.
+- Baseline income $290 per person.
+- First Year +$130. Ln Consumption +0.37 (Log2: +0.53)
+- Next 9 years +$8.30. Ln Consumption +0.03 (Log2: +0.04)
+
+Schedule income adjustments in future years. These are applied after other inputs.
+For simplicity:
+- Applies at start of each calendar year
+- list of adjustments for future years
+
 #### Reproduction
 
 - Age
@@ -75,20 +89,9 @@ The following features have not been prioritized or implemented.
 
 ## Future Human Features
 
-### Income Scheduler
+### Income Redistribution
 
-- Schedule income adjustments in future years. These are applied after other inputs.
-    - For simplicity:
-        - Applies at start of each calendar year
-        - list of adjustments for future years
-    - Donation.
-
-- Donate to income by [GiveWell's model of GiveDirectly](https://docs.google.com/spreadsheets/d/1BmFwVYeGMkpys6hG0tnfHyq__ZFZf-bmXYLSHODGpLY/edit#gid=1680005064&range=B20:B24).
-    - 83% of cash reaches the family
-    - About $210 per person of household size 4.7 for each $1000 reaching a household.
-    - Baseline income $290 per person.
-    - First Year +$130. Ln Consumption +0.37 (Log2: +0.53)
-    - Next 9 years +$8.30. Ln Consumption +0.03 (Log2: +0.04)
+Income redistributed within family, average for all after other adjustments. Previously, income didn't account for spending from parent to child, so the average doublings of income would be biased a bit lower for children, except that the doubling is clamped at least $100 income.
 
 ### Malaria Simulator
 
@@ -107,8 +110,4 @@ The following features have not been prioritized or implemented.
 - Birth rate correlates to female literacy.
 - Life expectancy correlates to literacy.
 - Donate to literacy
-
-### Income Redistribution
-
-Income redistributed within family, average for all after other adjustments. Previously, income didn't account for spending from parent to child, so the average doublings of income would be biased a bit lower for children, except that the doubling is clamped at least $100 income.
 
