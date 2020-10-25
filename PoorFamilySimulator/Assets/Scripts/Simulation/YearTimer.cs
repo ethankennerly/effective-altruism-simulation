@@ -9,7 +9,7 @@ namespace PoorFamily.Simulation
     {
         public ActionEvent<string> TextChanged = new ActionEvent<string>();
 
-        public float DeltaYears { get; }
+        public float DeltaYears { get; private set; }
 
         private int m_CurrentYear;
 
@@ -30,6 +30,7 @@ namespace PoorFamily.Simulation
 
         public void AddYears(float additionalYears)
         {
+            DeltaYears = additionalYears;
             if (additionalYears == 0f)
             {
                 return;
@@ -37,6 +38,7 @@ namespace PoorFamily.Simulation
 
             if (m_CurrentYear >= m_EndYear && additionalYears > 0f)
             {
+                DeltaYears = 0f;
                 return;
             }
 
@@ -54,6 +56,7 @@ namespace PoorFamily.Simulation
         {
             if (currentYear >= m_EndYear)
             {
+                DeltaYears -= currentYear - m_EndYear;
                 currentYear = m_EndYear;
             }
 
