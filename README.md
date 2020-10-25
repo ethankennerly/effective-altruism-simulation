@@ -49,6 +49,8 @@ To account for mourning the recently deceased, deceased members continue to be a
 - Income correlates to age.
     - Delta income.
 - Birth rate correlates to income.
+- Life expectancy correlates to income by a [Preston curve](https://en.wikipedia.org/wiki/Preston_curve).
+    - Income may only be a indirect correlation, as seen by [correlations to sanitation, infant survival](https://blog.euromonitor.com/economic-growth-and-life-expectancy-do-wealthier-countries-live-longer/).
 
 #### Reproduction
 
@@ -73,8 +75,9 @@ The following features have not been prioritized or implemented.
 
 ## Future Human Features
 
-- Life expectancy correlates to income by a [Preston curve](https://en.wikipedia.org/wiki/Preston_curve).
-- Donate to income
+- Donate to income by [GiveWell's model of GiveDirectly](https://docs.google.com/spreadsheets/d/1BmFwVYeGMkpys6hG0tnfHyq__ZFZf-bmXYLSHODGpLY/edit#gid=1680005064&range=B20:B24).
+    - First Year Ln Consumption + 0.37
+    - Next 9 years of Ln Consumption + 0.03
 
 ### Malaria Simulator
 

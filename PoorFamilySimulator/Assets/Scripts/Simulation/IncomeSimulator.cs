@@ -103,7 +103,11 @@ namespace PoorFamily.Simulation
 
         public void CalculateLifeExpectancy()
         {
-            Debug.LogWarning("TODO: Calculate Life Expectancy");
+            foreach (Human human in m_Humans)
+            {
+                human.LifeExpectancy = LifeExpectancyAtPoorestIncome +
+                    human.DoublingsOfIncome * LifeExpectancyPerDoublingOfIncome;
+            }
         }
 
         #endregion Life Expectancy
