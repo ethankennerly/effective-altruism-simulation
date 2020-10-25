@@ -44,11 +44,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Simulator:
-    TimeScale: 32
+    TimeScale: 1
     Humans:
     - Income: 0
       DoublingsOfIncome: 0
       NormalizedIncome: 0
+      ScheduledTransfers: []
       Age: 0
       LifeExpectancy: 55
       IsFemale: 1
@@ -59,6 +60,7 @@ MonoBehaviour:
     - Income: 0
       DoublingsOfIncome: 0
       NormalizedIncome: 0
+      ScheduledTransfers: []
       Age: 0
       LifeExpectancy: 55
       IsFemale: 0
@@ -83,3 +85,6 @@ MonoBehaviour:
       RaisePerYear: 30
       PeakAge: 30
       RaisePerYearAfterPeak: -20
+      SharingEnabled: 1
+      LifeExpectancyAtPoorestIncome: 47
+      LifeExpectancyPerDoublingOfIncome: 4

@@ -26,6 +26,7 @@ namespace PoorFamily.Simulation
         public float RaisePerYearAfterPeak = -20f;
 
         private readonly List<Human> m_Humans;
+        private int m_NumHumans;
 
         public IncomeSimulator(List<Human> humans)
         {
@@ -34,8 +35,10 @@ namespace PoorFamily.Simulation
 
         public void AddYears(float deltaYears)
         {
+            m_NumHumans = m_Humans.Count;
             CalculateRaise(deltaYears);
             TransferBySchedule(deltaYears);
+            TryShareIncome();
 
             AverageDoublingsOfIncome = CalculateAverageDoublingsOfIncome();
             NormalizedIncome = Mathf.Clamp01(AverageDoublingsOfIncome / RichestDoublings);
@@ -150,8 +153,7 @@ namespace PoorFamily.Simulation
                 return;
             }
 
-            int numHumans = m_Humans.Count;
-            if (numHumans == 0)
+            if (m_NumHumans == 0)
             {
                 return;
             }
@@ -160,7 +162,7 @@ namespace PoorFamily.Simulation
             List<float> averageTransfers = new List<float>(numTransfers);
             for (int transferIndex = 0; transferIndex < numTransfers; ++transferIndex)
             {
-                float averageTransfer = additionInFutureYears[transferIndex] / numHumans;
+                float averageTransfer = additionInFutureYears[transferIndex] / m_NumHumans;
                 averageTransfers.Add(averageTransfer);
             }
 
@@ -190,16 +192,38 @@ namespace PoorFamily.Simulation
 
         #region Income Sharing
 
-        public bool ShareIncome;
+        [Header("Income Sharing")]
+        public bool SharingEnabled;
+
+        private void TryShareIncome()
+        {
+            if (!SharingEnabled)
+            {
+                return;
+            }
+
+            float sumOfIncome = 0f;
+            foreach (Human human in m_Humans)
+            {
+                sumOfIncome += human.Income;
+            }
+
+            float averageIncome = sumOfIncome / m_NumHumans;
+            foreach (Human human in m_Humans)
+            {
+                human.Income = averageIncome;
+            }
+        }
 
         #endregion Income Sharing
 
-        public float CalculateAverageDoublingsOfIncome()
+        #region Normalized Income
+
+        private float CalculateAverageDoublingsOfIncome()
         {
             CalculateNormalizedIncome();
 
-            int numHumans = m_Humans.Count;
-            if (numHumans == 0)
+            if (m_NumHumans == 0)
             {
                 return 0f;
             }
@@ -210,7 +234,7 @@ namespace PoorFamily.Simulation
                 sum += human.DoublingsOfIncome;
             }
 
-            float averageWealth = sum / numHumans;
+            float averageWealth = sum / m_NumHumans;
             return averageWealth;
         }
 
@@ -227,6 +251,8 @@ namespace PoorFamily.Simulation
                 human.NormalizedIncome = Mathf.Clamp01(human.DoublingsOfIncome / RichestDoublings);
             }
         }
+
+        #endregion Normalized Income
 
         #region Life Expectancy
 

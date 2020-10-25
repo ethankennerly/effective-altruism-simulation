@@ -104,7 +104,7 @@ namespace PoorFamily.Tests.Simulation
                 new Human{Income = 1600}
             };
             IncomeSimulator incomeSim = new IncomeSimulator(humans);
-            incomeSim.ShareIncome = true;
+            incomeSim.SharingEnabled = true;
             incomeSim.AddYears(1f);
             Assert.AreEqual(4000f, humans[0].Income, "Was 6400");
             Assert.AreEqual(4000f, humans[1].Income, "Was 1600");
@@ -118,7 +118,8 @@ namespace PoorFamily.Tests.Simulation
         public void CalculateAverageDoublingsOfIncome_ZeroHumans_Zero()
         {
             IncomeSimulator incomeSim = new IncomeSimulator(new List<Human>());
-            Assert.AreEqual(0f, incomeSim.CalculateAverageDoublingsOfIncome());
+            incomeSim.AddYears(0.001f);
+            Assert.AreEqual(0f, incomeSim.AverageDoublingsOfIncome);
         }
 
         [Test]
