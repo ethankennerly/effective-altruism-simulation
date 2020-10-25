@@ -61,6 +61,14 @@ namespace PoorFamily.Simulation
             }
         }
 
+        #region Scheduling Transfers
+
+        public void ScheduleTransfer(List<float> additionInFutureYears)
+        {
+        }
+
+        #endregion Scheduling Transfers
+
         public float CalculateAverageDoublingsOfIncome()
         {
             CalculateNormalizedIncome();

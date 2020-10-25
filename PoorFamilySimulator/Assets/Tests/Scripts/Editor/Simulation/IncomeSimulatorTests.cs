@@ -52,6 +52,34 @@ namespace PoorFamily.Tests.Simulation
 
         #endregion Raise
 
+        #region Income Scheduler
+
+        [Test]
+        public void AddYears_Raise2AndScheduleTransfer130Then8Then8_Income132Then12Then14Then8()
+        {
+            List<Human> humans = new List<Human>{new Human()};
+            IncomeSimulator incomeSim = new IncomeSimulator(humans);
+            incomeSim.MinAge = 10f;
+            incomeSim.RaisePerYear = 2f;
+            Human.AddAgeToEach(humans, 10f);
+            incomeSim.AddYears(10f);
+            incomeSim.ScheduleTransfer(new List<float>{130f, 8f, 8f});
+            Human.AddAgeToEach(humans, 1f);
+            incomeSim.AddYears(1f);
+            Assert.AreEqual(132f, humans[0].Income);
+            Human.AddAgeToEach(humans, 1f);
+            incomeSim.AddYears(1f);
+            Assert.AreEqual(12f, humans[0].Income);
+            Human.AddAgeToEach(humans, 1f);
+            incomeSim.AddYears(1f);
+            Assert.AreEqual(14f, humans[0].Income);
+            Human.AddAgeToEach(humans, 1f);
+            incomeSim.AddYears(1f);
+            Assert.AreEqual(8f, humans[0].Income);
+        }
+
+        #endregion Income Scheduler
+
         #region Normalized Income
 
         [Test]

@@ -75,10 +75,12 @@ The following features have not been prioritized or implemented.
 
 ## Future Human Features
 
+### Income Scheduler
+
 - Schedule income adjustments in future years. These are applied after other inputs.
-    - Parent to child cost (so child is consuming the parent's income).
-    (Previously, income didn't account for spending from parent to child, so the average doublings of income would be biased a bit lower for children, except that the doubling is clamped at least $100 income.)
-        - 20 years. 10% from each parent's unadjusted income to each child. Blind estimate. Didn't find stats on cost of living.
+    - For simplicity:
+        - Applies at start of each calendar year
+        - list of adjustments for future years
     - Donation.
 
 - Donate to income by [GiveWell's model of GiveDirectly](https://docs.google.com/spreadsheets/d/1BmFwVYeGMkpys6hG0tnfHyq__ZFZf-bmXYLSHODGpLY/edit#gid=1680005064&range=B20:B24).
@@ -105,3 +107,8 @@ The following features have not been prioritized or implemented.
 - Birth rate correlates to female literacy.
 - Life expectancy correlates to literacy.
 - Donate to literacy
+
+### Income Redistribution
+
+Income redistributed within family, average for all after other adjustments. Previously, income didn't account for spending from parent to child, so the average doublings of income would be biased a bit lower for children, except that the doubling is clamped at least $100 income.
+
