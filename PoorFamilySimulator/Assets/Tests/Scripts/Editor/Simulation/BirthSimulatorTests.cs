@@ -13,8 +13,8 @@ namespace PoorFamily.Tests.Simulation
         public void AddYears_ZeroHumans_0()
         {
             List<Human> humans = new List<Human>();
-            BirthSimulator simulator = new BirthSimulator(humans);
-            simulator.AddYears(0f);
+            BirthSimulator birthSim = new BirthSimulator(humans);
+            birthSim.AddYears(0f);
             Assert.AreEqual(0, humans.Count);
         }
 
@@ -22,8 +22,8 @@ namespace PoorFamily.Tests.Simulation
         public void AddYears_FemaleNotInFertileAgeRange_TwoHumans()
         {
             List<Human> humans = SetUpHumansOneYearBeforeFemaleIsFertile();
-            BirthSimulator simulator = new BirthSimulator(humans);
-            simulator.AddYears(13f);
+            BirthSimulator birthSim = new BirthSimulator(humans);
+            birthSim.AddYears(13f);
             Assert.AreEqual(2, humans.Count);
         }
 
@@ -31,10 +31,10 @@ namespace PoorFamily.Tests.Simulation
         public void AddYears_TwoFemales_TwoHumans()
         {
             List<Human> humans = SetUpHumansOneYearBeforeFemaleIsFertile();
-            BirthSimulator simulator = new BirthSimulator(humans);
+            BirthSimulator birthSim = new BirthSimulator(humans);
             humans[0].IsFemale = true;
             humans[1].IsFemale = true;
-            simulator.AddYears(20f);
+            birthSim.AddYears(20f);
             Assert.AreEqual(2, humans.Count);
         }
 
@@ -42,10 +42,10 @@ namespace PoorFamily.Tests.Simulation
         public void AddYears_TwoMales_TwoHumans()
         {
             List<Human> humans = SetUpHumansOneYearBeforeFemaleIsFertile();
-            BirthSimulator simulator = new BirthSimulator(humans);
+            BirthSimulator birthSim = new BirthSimulator(humans);
             humans[0].IsFemale = false;
             humans[1].IsFemale = false;
-            simulator.AddYears(20f);
+            birthSim.AddYears(20f);
             Assert.AreEqual(2, humans.Count);
         }
 
@@ -53,9 +53,9 @@ namespace PoorFamily.Tests.Simulation
         public void AddYears_FemaleAndMaleInFertileAgeRange_ThreeHumans()
         {
             List<Human> humans = SetUpHumansOneYearBeforeFemaleIsFertile();
-            BirthSimulator simulator = new BirthSimulator(humans);
+            BirthSimulator birthSim = new BirthSimulator(humans);
             Human female = humans[0];
-            simulator.AddYears(14f);
+            birthSim.AddYears(14f);
             Assert.AreEqual(3, humans.Count);
         }
 
@@ -90,8 +90,8 @@ namespace PoorFamily.Tests.Simulation
         public void AddYears_25Years_4Humans()
         {
             List<Human> humans = SetUpHumansOneYearBeforeFemaleIsFertile();
-            BirthSimulator simulator = new BirthSimulator(humans);
-            simulator.AddYears(25f);
+            BirthSimulator birthSim = new BirthSimulator(humans);
+            birthSim.AddYears(25f);
             Assert.AreEqual(4, humans.Count);
         }
 
@@ -99,8 +99,8 @@ namespace PoorFamily.Tests.Simulation
         public void AddYears_25Years_SecondChildIsNotFemale()
         {
             List<Human> humans = SetUpHumansOneYearBeforeFemaleIsFertile();
-            BirthSimulator simulator = new BirthSimulator(humans);
-            simulator.AddYears(25f);
+            BirthSimulator birthSim = new BirthSimulator(humans);
+            birthSim.AddYears(25f);
             Assert.AreEqual(4, humans.Count);
             Assert.IsFalse(humans[3].IsFemale);
         }
@@ -109,27 +109,27 @@ namespace PoorFamily.Tests.Simulation
         public void HistoricalBirthRate_For100Years_Between30And50Per1000()
         {
             List<Human> humans = SetUpHumansOneYearBeforeFemaleIsFertile();
-            BirthSimulator simulator = new BirthSimulator(humans);
+            BirthSimulator birthSim = new BirthSimulator(humans);
             float deltaYears = 1f / 64f;
             for (float years = 0f; years < 100f; years += deltaYears)
             {
-                simulator.AddYears(deltaYears);
+                birthSim.AddYears(deltaYears);
             }
             Assert.That(
-                simulator.HistoricalBirthRate,
+                birthSim.HistoricalBirthRate,
                 Is.EqualTo(0.04f).Within(0.01f),
-                simulator.ToString()
+                birthSim.ToString()
             );
 
-            Debug.Log(simulator.ToString());
-            Debug.Log(simulator.HistoricalRatesToString());
+            Debug.Log(birthSim.ToString());
+            Debug.Log(birthSim.HistoricalRatesToString());
         }
 
         private static Human AssertTwoHumansHalfOfBirthPerLifeYear_GetOneChild()
         {
             List<Human> humans = SetUpHumansOneYearBeforeFemaleIsFertile();
-            BirthSimulator simulator = new BirthSimulator(humans);
-            simulator.AddYears(14f);
+            BirthSimulator birthSim = new BirthSimulator(humans);
+            birthSim.AddYears(14f);
             Assert.AreEqual(3, humans.Count, "Number of humans after one new child birth");
             Human child = humans[2];
             return child;

@@ -14,12 +14,14 @@ namespace PoorFamily.Simulation
 
         public List<Human> Humans = new List<Human>();
 
+        public BirthRateSimulator BirthRate;
         public BirthSimulator Birth;
         private DeathSimulator m_Death;
         public IncomeSimulator Income;
 
         public Simulator()
         {
+            BirthRate = new BirthRateSimulator(Humans);
             Birth = new BirthSimulator(Humans);
             Income = new IncomeSimulator(Humans);
             m_Death = new DeathSimulator(Humans);
@@ -30,6 +32,7 @@ namespace PoorFamily.Simulation
         {
             YearTimer.AddYears(deltaTime);
             float deltaYears = YearTimer.DeltaYears;
+            BirthRate.CalculateEachByIncome();
             Birth.AddYears(deltaYears);
             Income.AddYears(deltaYears);
             m_Death.TryDeath();

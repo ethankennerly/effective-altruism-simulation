@@ -52,21 +52,6 @@ namespace PoorFamily.Tests.Simulation
 
         #endregion Raise
 
-        #region Birth Rate
-
-        [Test]
-        public void AddYears_Income400_BirthRateReducedTwice()
-        {
-            List<Human> humans = new List<Human>{new Human{Income = 400}};
-            IncomeSimulator incomeSim = new IncomeSimulator(humans);
-            incomeSim.BirthRateAtPoorestIncome = 1f / 16f;
-            incomeSim.BirthRatePerDoublingOfIncome = -1f / 256f;
-            incomeSim.AddYears(1f / 1024f);
-            Assert.AreEqual(1f / 16f - 1f / 128f, humans[0].BirthRate);
-        }
-
-        #endregion Birth Rate
-
         #region Normalized Income
 
         [Test]

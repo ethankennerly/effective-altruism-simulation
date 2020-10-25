@@ -57,6 +57,44 @@ namespace PoorFamily.Simulation
             }
         }
 
+        private float CalculateHistoricalBirthRate(float deltaYears)
+        {
+            for (m_PartialYears += deltaYears; m_PartialYears >= 1f; --m_PartialYears)
+            {
+                float birthRate = m_NumBirthsInPartialYears / NumHumans;
+                m_NumBirthsInPartialYears = 0f;
+                m_SumOfBirthRateInFullYears += birthRate;
+                m_BirthRateInFullYears.Add(birthRate);
+                m_FullYears++;
+                m_TriedBirthThisYear = false;
+            }
+
+            if (m_FullYears <= 0f)
+            {
+                return 0f;
+            }
+
+            float actualBirthRate = m_SumOfBirthRateInFullYears / m_FullYears;
+            return actualBirthRate;
+        }
+
+        private float CalculateExpectedBirthRate(List<Human> humans)
+        {
+            if (NumHumans <= 0)
+            {
+                return 0f;
+            }
+
+            float sumOfBirthRates = 0f;
+            foreach (Human human in m_Humans)
+            {
+                sumOfBirthRates += human.BirthRate;
+            }
+
+            float averageOfBirthRates = sumOfBirthRates / NumHumans;
+            return averageOfBirthRates;
+        }
+
         /// <summary>
         /// While the expected birth rate is above the historical birth rate,
         /// a fertile female and male give birth to a child.
@@ -129,44 +167,6 @@ namespace PoorFamily.Simulation
                     break;
                 }
             }
-        }
-
-        private float CalculateExpectedBirthRate(List<Human> humans)
-        {
-            if (NumHumans <= 0)
-            {
-                return 0f;
-            }
-
-            float sumOfBirthRates = 0f;
-            foreach (Human human in m_Humans)
-            {
-                sumOfBirthRates += human.BirthRate;
-            }
-
-            float averageOfBirthRates = sumOfBirthRates / NumHumans;
-            return averageOfBirthRates;
-        }
-
-        private float CalculateHistoricalBirthRate(float deltaYears)
-        {
-            for (m_PartialYears += deltaYears; m_PartialYears >= 1f; --m_PartialYears)
-            {
-                float birthRate = m_NumBirthsInPartialYears / NumHumans;
-                m_NumBirthsInPartialYears = 0f;
-                m_SumOfBirthRateInFullYears += birthRate;
-                m_BirthRateInFullYears.Add(birthRate);
-                m_FullYears++;
-                m_TriedBirthThisYear = false;
-            }
-
-            if (m_FullYears <= 0f)
-            {
-                return 0f;
-            }
-
-            float actualBirthRate = m_SumOfBirthRateInFullYears / m_FullYears;
-            return actualBirthRate;
         }
     }
 }

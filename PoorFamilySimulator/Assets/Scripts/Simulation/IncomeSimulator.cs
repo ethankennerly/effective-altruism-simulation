@@ -22,8 +22,6 @@ namespace PoorFamily.Simulation
         public float RaisePerYear = 30f;
         public float PeakAge = 30f;
         public float RaisePerYearAfterPeak = -20f;
-        public float BirthRateAtPoorestIncome = 1f / 16f;
-        public float BirthRatePerDoublingOfIncome = -1f / 256f;
 
         private readonly List<Human> m_Humans;
 
@@ -38,8 +36,6 @@ namespace PoorFamily.Simulation
 
             AverageDoublingsOfIncome = CalculateAverageDoublingsOfIncome();
             NormalizedIncome = Mathf.Clamp01(AverageDoublingsOfIncome / RichestDoublings);
-
-            CalculateBirthRateByIncome();
         }
 
         private void CalculateRaise(float deltaYears)
@@ -60,15 +56,6 @@ namespace PoorFamily.Simulation
                 }
 
                 human.Income += deltaIncome;
-            }
-        }
-
-        private void CalculateBirthRateByIncome()
-        {
-            foreach (Human human in m_Humans)
-            {
-                human.BirthRate = BirthRateAtPoorestIncome +
-                    human.DoublingsOfIncome * BirthRatePerDoublingOfIncome;
             }
         }
 
