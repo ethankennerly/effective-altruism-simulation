@@ -66,16 +66,18 @@ namespace PoorFamily.Tests.Simulation
             incomeSim.ScheduleTransfer(new List<float>{130f, 8f, 8f});
             Human.AddAgeToEach(humans, 1f);
             incomeSim.AddYears(1f);
-            Assert.AreEqual(132f, humans[0].Income);
+            Assert.AreEqual(132f, humans[0].Income,
+                "Year 1\nScheduled Transfers: " + string.Join(", ", humans[0].ScheduledTransfers));
             Human.AddAgeToEach(humans, 1f);
             incomeSim.AddYears(1f);
-            Assert.AreEqual(12f, humans[0].Income);
+            Assert.AreEqual(12f, humans[0].Income,
+                "Year 2\nScheduled Transfers: " + string.Join(", ", humans[0].ScheduledTransfers));
             Human.AddAgeToEach(humans, 1f);
             incomeSim.AddYears(1f);
-            Assert.AreEqual(14f, humans[0].Income);
+            Assert.AreEqual(14f, humans[0].Income, "Year 3");
             Human.AddAgeToEach(humans, 1f);
             incomeSim.AddYears(1f);
-            Assert.AreEqual(8f, humans[0].Income);
+            Assert.AreEqual(8f, humans[0].Income, "Year 4");
         }
 
         #endregion Income Scheduler
