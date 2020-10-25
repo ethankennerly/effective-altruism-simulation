@@ -106,5 +106,37 @@ namespace PoorFamily.Tests.Simulation
         }
 
         #endregion Normalized Income
+
+        #region Life Expectancy
+
+        [Test]
+        public void CalculateLifeExpectancy_1XPoorestIncome_LifeExpectancy47()
+        {
+            AssertLifeExpectancyByDoublingsOfIncome(0f);
+        }
+
+        [Test]
+        public void CalculateLifeExpectancy_4XPoorestIncome_LifeExpectancy55()
+        {
+            AssertLifeExpectancyByDoublingsOfIncome(2f);
+        }
+
+        [Test]
+        public void CalculateLifeExpectancy_1024XPoorestIncome_LifeExpectancy87()
+        {
+            AssertLifeExpectancyByDoublingsOfIncome(10f);
+        }
+
+        private static void AssertLifeExpectancyByDoublingsOfIncome(float doublingsOfIncome)
+        {
+            List<Human> humans = new List<Human>{new Human{DoublingsOfIncome = doublingsOfIncome}};
+            IncomeSimulator incomeSim = new IncomeSimulator(humans);
+            incomeSim.LifeExpectancyAtPoorestIncome = 47f;
+            incomeSim.LifeExpectancyPerDoublingOfIncome = 4f;
+            incomeSim.CalculateLifeExpectancy();
+            Assert.AreEqual(47f + doublingsOfIncome * 4f, humans[0].LifeExpectancy);
+        }
+
+        #endregion Life Expectancy
     }
 }

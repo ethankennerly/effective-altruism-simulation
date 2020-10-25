@@ -48,6 +48,7 @@ To account for mourning the recently deceased, deceased members continue to be a
 - Normalized Income
 - Income correlates to age.
     - Delta income.
+- Birth rate correlates to income.
 
 #### Reproduction
 
@@ -72,8 +73,7 @@ The following features have not been prioritized or implemented.
 
 ## Future Human Features
 
-- Birth rate correlates to income.
-- Life expectancy correlates to income.
+- Life expectancy correlates to income by a [Preston curve](https://en.wikipedia.org/wiki/Preston_curve).
 - Donate to income
 
 ### Malaria Simulator

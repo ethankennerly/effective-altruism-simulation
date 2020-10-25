@@ -9,6 +9,7 @@ namespace PoorFamily.Simulation
     {
         private const int kDoublingBase = 2;
 
+        [Header("Satisfaction")]
         [Range(0, 10)] public float AverageDoublingsOfIncome;
         [Range(0f, 1f)] public float NormalizedIncome;
 
@@ -18,6 +19,7 @@ namespace PoorFamily.Simulation
         public float PoorestDoublings;
         [Range(0, 10)] public float RichestDoublings;
 
+        [Header("Raise")]
         public float MinAge = 10f;
         public float RaisePerYear = 30f;
         public float PeakAge = 30f;
@@ -92,5 +94,18 @@ namespace PoorFamily.Simulation
                 human.NormalizedIncome = Mathf.Clamp01(human.DoublingsOfIncome / RichestDoublings);
             }
         }
+
+        #region Life Expectancy
+
+        [Header("Life Expectancy")]
+        public float LifeExpectancyAtPoorestIncome = 47f;
+        public float LifeExpectancyPerDoublingOfIncome = 4f;
+
+        public void CalculateLifeExpectancy()
+        {
+            Debug.LogWarning("TODO: Calculate Life Expectancy");
+        }
+
+        #endregion Life Expectancy
     }
 }
