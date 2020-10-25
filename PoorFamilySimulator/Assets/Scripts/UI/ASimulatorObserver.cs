@@ -6,7 +6,7 @@ namespace PoorFamily.UI
 {
     public abstract class ASimulatorObserver : MonoBehaviour
     {
-        [SerializeField] private SimulatorInspector m_SimulatorInspector = null;
+        [SerializeField] protected SimulatorInspector m_SimulatorInspector = null;
 
         private Action<Simulator> m_OnSimulatorUpdated;
 
@@ -15,12 +15,12 @@ namespace PoorFamily.UI
             m_OnSimulatorUpdated = OnSimulatorUpdated;
         }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             m_SimulatorInspector.Simulator.Updated.OnInvoke += m_OnSimulatorUpdated;
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             m_SimulatorInspector.Simulator.Updated.OnInvoke -= m_OnSimulatorUpdated;
         }

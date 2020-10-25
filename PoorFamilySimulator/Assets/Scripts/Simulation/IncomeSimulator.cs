@@ -66,6 +66,11 @@ namespace PoorFamily.Simulation
 
         private List<float> m_NextAdditionInFutureYears;
 
+        public bool IsTransferPending()
+        {
+            return m_NextAdditionInFutureYears != null;
+        }
+
         public void GiveDirectly1205()
         {
             List<float> giveDirectlySchedule = BuildGiveDirectly1205Schedule();

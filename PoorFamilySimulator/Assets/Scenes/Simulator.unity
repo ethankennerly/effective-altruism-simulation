@@ -348,6 +348,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SimulatorInspector
       objectReference: {fileID: 0}
+    - target: {fileID: 7303820927321111072, guid: 725d1867e8f484a44b95690920206223,
+        type: 3}
+      propertyPath: Simulator.TimeScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2379592858208767709, guid: 725d1867e8f484a44b95690920206223,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -412,6 +417,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6737766368889203183, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737766368889203183, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4285160565849358467, guid: 1e02df19c08dbea4698d3215fb73b02c,
         type: 3}
       propertyPath: m_Name
@@ -522,16 +537,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6831144321933080659, guid: 1e02df19c08dbea4698d3215fb73b02c,
-        type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4486530256190110104, guid: 1e02df19c08dbea4698d3215fb73b02c,
-        type: 3}
-      propertyPath: m_inputSource
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4486530256190110104, guid: 1e02df19c08dbea4698d3215fb73b02c,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -554,10 +559,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3692921559233047834, guid: 1e02df19c08dbea4698d3215fb73b02c,
         type: 3}
-      propertyPath: m_MainInspector
+      propertyPath: m_SimulatorInspector
       value: 
       objectReference: {fileID: 7303820927321111072}
-    - target: {fileID: 3692921559233047834, guid: 1e02df19c08dbea4698d3215fb73b02c,
+    - target: {fileID: 8232370600717904319, guid: 1e02df19c08dbea4698d3215fb73b02c,
         type: 3}
       propertyPath: m_SimulatorInspector
       value: 
