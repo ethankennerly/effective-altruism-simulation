@@ -52,6 +52,10 @@ To account for mourning the recently deceased, deceased members continue to be a
 - Life expectancy correlates to income by a [Preston curve](https://en.wikipedia.org/wiki/Preston_curve).
     - Income may only be a indirect correlation, as seen by [correlations to sanitation, infant survival](https://blog.euromonitor.com/economic-growth-and-life-expectancy-do-wealthier-countries-live-longer/).
 
+#### Income Sharing
+
+Income redistributed within family, average for all after other adjustments. Previously, income didn't account for spending from parent to child, so the average doublings of income would be biased a bit lower for children, except that the doubling is clamped at least $100 income.
+
 #### GiveDirectly
 
 Donate to income by [GiveWell's model of GiveDirectly](https://docs.google.com/spreadsheets/d/1BmFwVYeGMkpys6hG0tnfHyq__ZFZf-bmXYLSHODGpLY/edit#gid=1680005064&range=B20:B24).
@@ -87,27 +91,43 @@ This simulation focuses on small scope, simplicity, and publicly available evide
 
 The following features have not been prioritized or implemented.
 
+## Recurring Donations
+
+Button:
+- Do Not Donate
+
+Repeat the last button pressed each new year.
+
+Donation budget.
+
+Donation depletes budget by amount.
+
+Cost on each button.
+
+Income to donate each year.
+
 ## Future Human Features
-
-### Income Redistribution
-
-Income redistributed within family, average for all after other adjustments. Previously, income didn't account for spending from parent to child, so the average doublings of income would be biased a bit lower for children, except that the doubling is clamped at least $100 income.
 
 ### Malaria Simulator
 
-- Income correlates to malaria.
-- Life expectancy correlates to malaria.
-- Donate to prevent malaria.
+Income correlates to malaria protection.
+- [1% income increase](https://docs.google.com/spreadsheets/d/1BmFwVYeGMkpys6hG0tnfHyq__ZFZf-bmXYLSHODGpLY/edit#gid=1364064522&range=A111:B114) for malaria protection.
+
+Life expectancy correlates to malaria protection.
+- 3% higher life expectancy, as a naive estimate derived from:
+- [6% deaths averted](https://docs.google.com/spreadsheets/d/1BmFwVYeGMkpys6hG0tnfHyq__ZFZf-bmXYLSHODGpLY/edit#gid=1364064522&range=A216:B216).
+
+Donate to AMF mosquito nets.
+- [$1.20 covers 1 person with a mosquito net](https://docs.google.com/spreadsheets/d/1BmFwVYeGMkpys6hG0tnfHyq__ZFZf-bmXYLSHODGpLY/edit#gid=1364064522&range=A11:B18).
 
 ### Worm Simulator
 
 - Income correlates to worms.
-- Donate to deworming
+- Donate to deworming.
 
 ### Literacy Simulator
 
 - Income correlates to literacy.
 - Birth rate correlates to female literacy.
 - Life expectancy correlates to literacy.
-- Donate to literacy
-
+- Donate to literacy.
