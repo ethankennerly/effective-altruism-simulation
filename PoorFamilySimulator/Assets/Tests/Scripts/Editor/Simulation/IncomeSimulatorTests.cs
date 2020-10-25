@@ -3,6 +3,8 @@ using PoorFamily.Simulation;
 using System;
 using System.Collections.Generic;
 
+using Debug = UnityEngine.Debug;
+
 namespace PoorFamily.Tests.Simulation
 {
     public sealed class IncomeSimulatorTests
@@ -53,6 +55,15 @@ namespace PoorFamily.Tests.Simulation
         #endregion Raise
 
         #region Income Scheduler
+
+        [Test]
+        public void AddYears_BuildGiveDirectly1205Schedule_Log()
+        {
+            List<Human> humans = new List<Human>{new Human()};
+            IncomeSimulator incomeSim = new IncomeSimulator(humans);
+            string scheduleString = string.Join(", ", incomeSim.BuildGiveDirectly1205Schedule());
+            Debug.Log(scheduleString);
+        }
 
         [Test]
         public void AddYears_Raise2AndScheduleTransfer130Then8Then8_Income132Then12Then14Then8()

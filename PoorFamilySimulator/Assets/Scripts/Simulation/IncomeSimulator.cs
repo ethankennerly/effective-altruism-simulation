@@ -66,6 +66,33 @@ namespace PoorFamily.Simulation
 
         private List<float> m_NextAdditionInFutureYears;
 
+        public void GiveDirectly1205()
+        {
+            List<float> giveDirectlySchedule = BuildGiveDirectly1205Schedule();
+            ScheduleTransfer(giveDirectlySchedule);
+        }
+
+        public List<float> BuildGiveDirectly1205Schedule()
+        {
+            float cost = 1205f;
+            float recipientRate = 0.83f;
+            float payout = cost * recipientRate;
+            float investRate = 0.39f;
+            float yearsOfInvestment = 10f;
+
+            List<float> additionInFutureYears = new List<float>((int)yearsOfInvestment);
+            float firstYear = (1f - investRate) * payout;
+            additionInFutureYears.Add(firstYear);
+
+            float returnPerYear = investRate * payout / yearsOfInvestment;
+            for (int yearIndex = 0; yearIndex < yearsOfInvestment; ++yearIndex)
+            {
+                additionInFutureYears.Add(returnPerYear);
+            }
+
+            return additionInFutureYears;
+        }
+
         /// <summary>
         /// This overwrites any transfer not applied yet.
         /// </summary>
