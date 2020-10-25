@@ -10,7 +10,9 @@ namespace PoorFamily.Simulation
     {
         public readonly ActionEvent<Simulator> Updated = new ActionEvent<Simulator>();
 
-        public YearTimer YearTimer { get; } = new YearTimer(2013, 100); 
+        public float TimeScale = 1f;
+
+        public YearTimer YearTimer { get; } = new YearTimer(2013, 100);
 
         public List<Human> Humans = new List<Human>();
 
@@ -30,7 +32,7 @@ namespace PoorFamily.Simulation
 
         public void AddTime(float deltaTime)
         {
-            YearTimer.AddYears(deltaTime);
+            YearTimer.AddYears(deltaTime * TimeScale);
             float deltaYears = YearTimer.DeltaYears;
             BirthRate.CalculateEachByIncome();
             Birth.AddYears(deltaYears);

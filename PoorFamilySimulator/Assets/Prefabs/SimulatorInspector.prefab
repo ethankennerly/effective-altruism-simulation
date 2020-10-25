@@ -44,12 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Simulator:
-    AverageDoublingsOfIncome: 0
-    NormalizedIncome: 0
-    PoorestIncome: 100
-    RichestIncome: 102400
-    PoorestDoublings: 0
-    RichestDoublings: 0
+    TimeScale: 32
     Humans:
     - Income: 0
       DoublingsOfIncome: 0
@@ -71,10 +66,19 @@ MonoBehaviour:
       FertileAgeRange:
         Min: 14
         Max: 70
-    BirthSimulator:
+    BirthRate:
+      BirthRateAtPoorestIncome: 0.0625
+      BirthRatePerDoublingOfIncome: -0.00390625
+    Birth:
       HistoricalBirthRate: 0
       NumHumans: 0
-    IncomeSimulator:
+    Income:
+      AverageDoublingsOfIncome: 0
+      NormalizedIncome: 0
+      PoorestIncome: 100
+      RichestIncome: 102400
+      PoorestDoublings: 0
+      RichestDoublings: 0
       MinAge: 10
       RaisePerYear: 30
       PeakAge: 30
