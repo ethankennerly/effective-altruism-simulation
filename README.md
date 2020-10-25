@@ -75,9 +75,18 @@ The following features have not been prioritized or implemented.
 
 ## Future Human Features
 
+- Schedule income adjustments in future years. These are applied after other inputs.
+    - Parent to child cost (so child is consuming the parent's income).
+    (Previously, income didn't account for spending from parent to child, so the average doublings of income would be biased a bit lower for children, except that the doubling is clamped at least $100 income.)
+        - 20 years. 10% from each parent's unadjusted income to each child. Blind estimate. Didn't find stats on cost of living.
+    - Donation.
+
 - Donate to income by [GiveWell's model of GiveDirectly](https://docs.google.com/spreadsheets/d/1BmFwVYeGMkpys6hG0tnfHyq__ZFZf-bmXYLSHODGpLY/edit#gid=1680005064&range=B20:B24).
-    - First Year Ln Consumption + 0.37
-    - Next 9 years of Ln Consumption + 0.03
+    - 83% of cash reaches the family
+    - About $210 per person of household size 4.7 for each $1000 reaching a household.
+    - Baseline income $290 per person.
+    - First Year +$130. Ln Consumption +0.37 (Log2: +0.53)
+    - Next 9 years +$8.30. Ln Consumption +0.03 (Log2: +0.04)
 
 ### Malaria Simulator
 
