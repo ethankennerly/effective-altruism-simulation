@@ -26,6 +26,7 @@ namespace PoorFamily.Simulation.Donation
             m_CultureInfo = CultureInfo.CreateSpecificCulture(Culture);
 
             Options = new List<ADonorOption>();
+            Options.Add(OptionMenu.Pratham);
             Options.Add(OptionMenu.GiveDirectly);
             Options.Add(OptionMenu.Save);
             Options.Add(OptionMenu.EatOutAndEntertain);

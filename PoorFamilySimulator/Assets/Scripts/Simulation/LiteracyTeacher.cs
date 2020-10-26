@@ -1,3 +1,4 @@
+using PoorFamily.Simulation.Donation;
 using System;
 using System.Collections.Generic;
 
@@ -11,10 +12,13 @@ namespace PoorFamily.Simulation
         public float Funds;
 
         private readonly List<Human> m_Humans;
+        private readonly Donor m_Donor;
 
-        public LiteracyTeacher(List<Human> humans)
+        public LiteracyTeacher(List<Human> humans, Donor donor = null)
         {
             m_Humans = humans;
+
+            m_Donor = donor;
         }
 
         public void AddFunds(float funds)

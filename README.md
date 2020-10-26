@@ -125,8 +125,10 @@ Birth rate [correlates to female literacy](https://amity.edu/UserFiles/admaa/54a
 Donate to Pratham.
 - [Cost $100 per literate child](https://prathamusa.org/program/literacy-and-learning/)
     - Cost scales to about 1/6th of average family income.
+    - This estimate attempted to account for overhead.
 - The student remains literate for life.
-- Disable donation at 100% literacy.
+- No room for funding while 100% literacy.
+    - Hide button when no room for funding.
 
 Income correlates to literacy.
 - [1% income](http://bibliotecadigital.fgv.br/ocs/index.php/sbe/EBE08/paper/viewFile/407/55)
