@@ -1,3 +1,4 @@
+using PoorFamily.Simulation.Donation;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,15 +28,18 @@ namespace PoorFamily.Simulation
 
         private readonly List<Human> m_Humans;
         private int m_NumHumans;
+        private readonly Donor m_Donor;
 
-        public IncomeSimulator(List<Human> humans)
+        public IncomeSimulator(List<Human> humans, Donor donor = null)
         {
             m_Humans = humans;
+            m_Donor = donor;
         }
 
         public void AddYears(float deltaYears)
         {
             m_NumHumans = m_Humans.Count;
+            TryGiveDirectly(m_Donor);
             CalculateRaise(deltaYears);
             TransferBySchedule(deltaYears);
             TryShareIncome();
@@ -74,15 +78,35 @@ namespace PoorFamily.Simulation
             return m_NextAdditionInFutureYears != null;
         }
 
+        private void TryGiveDirectly(Donor donor)
+        {
+            if (donor == null)
+            {
+                return;
+            }
+
+            ADonorOption giveDirectlyOption = donor.OptionMenu.GiveDirectly;
+            if (!giveDirectlyOption.Funded)
+            {
+                return;
+            }
+
+            GiveDirectly(giveDirectlyOption.Cost);
+        }
+
         public void GiveDirectly1205()
         {
-            List<float> giveDirectlySchedule = BuildGiveDirectly1205Schedule();
+            GiveDirectly(1205f);
+        }
+
+        public void GiveDirectly(float cost)
+        {
+            List<float> giveDirectlySchedule = BuildGiveDirectlySchedule(cost);
             ScheduleTransfer(giveDirectlySchedule);
         }
 
-        public List<float> BuildGiveDirectly1205Schedule()
+        public List<float> BuildGiveDirectlySchedule(float cost)
         {
-            float cost = 1205f;
             float recipientRate = 0.83f;
             float payout = cost * recipientRate;
             float investRate = 0.39f;

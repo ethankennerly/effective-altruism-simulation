@@ -61,7 +61,7 @@ namespace PoorFamily.Tests.Simulation
         {
             List<Human> humans = new List<Human>{new Human()};
             IncomeSimulator incomeSim = new IncomeSimulator(humans);
-            string scheduleString = string.Join(", ", incomeSim.BuildGiveDirectly1205Schedule());
+            string scheduleString = string.Join(", ", incomeSim.BuildGiveDirectlySchedule(1205f));
             Debug.Log(scheduleString);
         }
 
@@ -89,6 +89,34 @@ namespace PoorFamily.Tests.Simulation
             Human.AddAgeToEach(humans, 1f);
             incomeSim.AddYears(1f);
             Assert.AreEqual(8f, humans[0].Income, "Year 4");
+        }
+
+        [Test]
+        public void AddYears_Raise2AndScheduleThreeTransfers130Then8Then8_Income392Then28Then30Then24()
+        {
+            List<Human> humans = new List<Human>{new Human()};
+            IncomeSimulator incomeSim = new IncomeSimulator(humans);
+            incomeSim.MinAge = 10f;
+            incomeSim.RaisePerYear = 2f;
+            Human.AddAgeToEach(humans, 10f);
+            incomeSim.AddYears(10f);
+            incomeSim.ScheduleTransfer(new List<float>{130f, 8f, 8f});
+            incomeSim.ScheduleTransfer(new List<float>{130f, 8f, 8f});
+            incomeSim.ScheduleTransfer(new List<float>{130f, 8f, 8f});
+            Human.AddAgeToEach(humans, 1f);
+            incomeSim.AddYears(1f);
+            Assert.AreEqual(392f, humans[0].Income,
+                "Year 1\nScheduled Transfers: " + string.Join(", ", humans[0].ScheduledTransfers));
+            Human.AddAgeToEach(humans, 1f);
+            incomeSim.AddYears(1f);
+            Assert.AreEqual(28f, humans[0].Income,
+                "Year 2\nScheduled Transfers: " + string.Join(", ", humans[0].ScheduledTransfers));
+            Human.AddAgeToEach(humans, 1f);
+            incomeSim.AddYears(1f);
+            Assert.AreEqual(30f, humans[0].Income, "Year 3");
+            Human.AddAgeToEach(humans, 1f);
+            incomeSim.AddYears(1f);
+            Assert.AreEqual(24f, humans[0].Income, "Year 4");
         }
 
         #endregion Income Scheduler

@@ -29,7 +29,7 @@ namespace PoorFamily.Simulation
             Donor = new Donor();
             BirthRate = new BirthRateSimulator(Humans);
             Birth = new BirthSimulator(Humans);
-            Income = new IncomeSimulator(Humans);
+            Income = new IncomeSimulator(Humans, Donor);
             m_Death = new DeathSimulator(Humans);
             Updated.SetValue(this);
         }
