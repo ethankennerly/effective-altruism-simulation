@@ -217,16 +217,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2322183131027300784, guid: e161c718fdb52a24385dedd7d6812bec,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 225.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2322183131027300784, guid: e161c718fdb52a24385dedd7d6812bec,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -85.8
-      objectReference: {fileID: 0}
     - target: {fileID: 4188308324127701709, guid: e161c718fdb52a24385dedd7d6812bec,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -236,41 +226,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188308324127701709, guid: e161c718fdb52a24385dedd7d6812bec,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188308324127701709, guid: e161c718fdb52a24385dedd7d6812bec,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188308324127701709, guid: e161c718fdb52a24385dedd7d6812bec,
-        type: 3}
-      propertyPath: m_firstOverflowCharacterIndex
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188308324127701709, guid: e161c718fdb52a24385dedd7d6812bec,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8764696196171249814, guid: e161c718fdb52a24385dedd7d6812bec,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 225.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8764696196171249814, guid: e161c718fdb52a24385dedd7d6812bec,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 42.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8764696196171249814, guid: e161c718fdb52a24385dedd7d6812bec,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 145.4
       objectReference: {fileID: 0}
     - target: {fileID: 4106787768285164371, guid: e161c718fdb52a24385dedd7d6812bec,
         type: 3}
@@ -282,37 +237,22 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4106787768285164371, guid: e161c718fdb52a24385dedd7d6812bec,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4106787768285164371, guid: e161c718fdb52a24385dedd7d6812bec,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4106787768285164371, guid: e161c718fdb52a24385dedd7d6812bec,
-        type: 3}
-      propertyPath: m_firstOverflowCharacterIndex
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4106787768285164371, guid: e161c718fdb52a24385dedd7d6812bec,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2323241177679528399, guid: e161c718fdb52a24385dedd7d6812bec,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -13
-      objectReference: {fileID: 0}
     - target: {fileID: 5854898421466056517, guid: e161c718fdb52a24385dedd7d6812bec,
         type: 3}
       propertyPath: m_havePropertiesChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5854898421466056517, guid: e161c718fdb52a24385dedd7d6812bec,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5090034628513456176, guid: e161c718fdb52a24385dedd7d6812bec,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5090034628513456176, guid: e161c718fdb52a24385dedd7d6812bec,
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 0

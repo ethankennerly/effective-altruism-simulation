@@ -7,9 +7,15 @@ namespace PoorFamily.Simulation.Donation
     public class ADonorOption
     {
         public float Cost;
+        public string CostString;
         public bool WillSelectNext;
         public bool WillFund;
         [Range(0f, 1f)] public float FundingProgress;
         public bool Funded;
+
+        public void Select()
+        {
+            WillSelectNext = true;
+        }
     }
 }

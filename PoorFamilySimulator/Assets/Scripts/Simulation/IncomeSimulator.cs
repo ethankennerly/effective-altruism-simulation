@@ -94,11 +94,6 @@ namespace PoorFamily.Simulation
             GiveDirectly(giveDirectlyOption.Cost);
         }
 
-        public void GiveDirectly1205()
-        {
-            GiveDirectly(1205f);
-        }
-
         public void GiveDirectly(float cost)
         {
             List<float> giveDirectlySchedule = BuildGiveDirectlySchedule(cost);
