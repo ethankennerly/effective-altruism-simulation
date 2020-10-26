@@ -115,6 +115,10 @@ Button:
 - Eat Out And Entertain (One Night Per Week) $2000/year
 - Save
 
+Read doublings of income.
+
+Read number of humans.
+
 ## Literacy Simulator
 
 80% of all humans are literate.
