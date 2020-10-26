@@ -3,10 +3,12 @@ using System;
 namespace PoorFamily.Simulation.Donation
 {
     [Serializable]
-    public abstract class ADonorOption
+    public class ADonorOption
     {
         public float Cost;
-        public bool Funded;
+        public bool WillSelectNext;
+        public bool WillFund;
         public float FundingProgress;
+        public bool Funded;
     }
 }

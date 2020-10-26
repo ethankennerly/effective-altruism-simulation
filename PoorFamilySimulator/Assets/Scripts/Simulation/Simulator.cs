@@ -1,4 +1,5 @@
 using FineGameDesign.Events;
+using PoorFamily.Simulation.Donation;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,8 @@ namespace PoorFamily.Simulation
 
         public List<Human> Humans = new List<Human>();
 
+        public Donor Donor;
+
         public BirthRateSimulator BirthRate;
         public BirthSimulator Birth;
         private DeathSimulator m_Death;
@@ -23,6 +26,7 @@ namespace PoorFamily.Simulation
 
         public Simulator()
         {
+            Donor = new Donor();
             BirthRate = new BirthRateSimulator(Humans);
             Birth = new BirthSimulator(Humans);
             Income = new IncomeSimulator(Humans);
@@ -34,6 +38,8 @@ namespace PoorFamily.Simulation
         {
             YearTimer.AddYears(deltaTime * TimeScale);
             float deltaYears = YearTimer.DeltaYears;
+
+            Donor.AddYears(deltaYears);
             BirthRate.CalculateEachByIncome();
             Birth.AddYears(deltaYears);
             Income.AddYears(deltaYears);

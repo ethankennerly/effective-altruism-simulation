@@ -6,7 +6,7 @@ namespace PoorFamily.Tests.Simulation.Donation
     public sealed class DonorTests
     {
         [Test]
-        public void AddYears_IncomeIncreases()
+        public void AddYears_DisposableIncomeIncreasesFundsAvailable()
         {
             Donor donor = new Donor{DisposableIncome = 30000f};
             donor.AddYears(0.5f);
@@ -47,7 +47,7 @@ namespace PoorFamily.Tests.Simulation.Donation
         {
             Donor donor = new Donor{FundsAvailable = 900f};
             donor.OptionMenu.GiveDirectly.Cost = 1200f;
-            donor.Select(donor.OptionMenu.GiveDirectly);
+            donor.OptionMenu.GiveDirectly.WillSelectNext = true;
             donor.AddYears(0f);
             Assert.AreEqual(0.75f, donor.OptionMenu.GiveDirectly.FundingProgress);
         }
@@ -57,7 +57,7 @@ namespace PoorFamily.Tests.Simulation.Donation
         {
             Donor donor = new Donor{FundsAvailable = 900f};
             donor.OptionMenu.GiveDirectly.Cost = 1200f;
-            donor.Select(donor.OptionMenu.GiveDirectly);
+            donor.OptionMenu.GiveDirectly.WillSelectNext = true;
             donor.AddYears(0f);
             Assert.AreEqual(900f, donor.FundsAvailable);
         }
@@ -67,11 +67,24 @@ namespace PoorFamily.Tests.Simulation.Donation
         {
             Donor donor = new Donor{FundsAvailable = 900f};
             donor.OptionMenu.GiveDirectly.Cost = 1200f;
-            donor.Select(donor.OptionMenu.GiveDirectly);
+            donor.OptionMenu.GiveDirectly.WillSelectNext = true;
             donor.AddYears(0f);
-            donor.Select(donor.OptionMenu.Save);
+            donor.OptionMenu.Save.WillSelectNext = true;
             donor.AddYears(0f);
             Assert.AreEqual(0f, donor.OptionMenu.GiveDirectly.FundingProgress);
+        }
+
+        [Test]
+        public void SelectGiveDirectlyThenSave_WaitTwoYears_SaveWillFund()
+        {
+            Donor donor = new Donor{FundsAvailable = 900f};
+            donor.OptionMenu.GiveDirectly.Cost = 1200f;
+            donor.OptionMenu.GiveDirectly.WillSelectNext = true;
+            donor.AddYears(0f);
+            donor.OptionMenu.Save.WillSelectNext = true;
+            donor.AddYears(1f);
+            donor.AddYears(1f);
+            Assert.IsTrue(donor.OptionMenu.Save.WillFund);
         }
 
         [Test]
@@ -79,7 +92,7 @@ namespace PoorFamily.Tests.Simulation.Donation
         {
             Donor donor = new Donor{FundsAvailable = 2205f};
             donor.OptionMenu.GiveDirectly.Cost = 1205f;
-            donor.Select(donor.OptionMenu.GiveDirectly);
+            donor.OptionMenu.GiveDirectly.WillSelectNext = true;
             donor.AddYears(0f);
             Assert.AreEqual(1000f, donor.FundsAvailable);
         }
@@ -89,7 +102,7 @@ namespace PoorFamily.Tests.Simulation.Donation
         {
             Donor donor = new Donor{FundsAvailable = 2205f};
             donor.OptionMenu.GiveDirectly.Cost = 1205f;
-            donor.Select(donor.OptionMenu.GiveDirectly);
+            donor.OptionMenu.GiveDirectly.WillSelectNext = true;
             donor.AddYears(0f);
             Assert.IsTrue(donor.OptionMenu.GiveDirectly.Funded);
         }

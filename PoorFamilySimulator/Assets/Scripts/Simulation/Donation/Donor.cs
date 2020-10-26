@@ -9,7 +9,6 @@ namespace PoorFamily.Simulation.Donation
     {
         [Range(0f, 100000f)] public float DisposableIncome = 30000f;
         public float FundsAvailable;
-        public ADonorOption SelectedOption;
 
         public DonorOptionMenu OptionMenu = new DonorOptionMenu();
 
@@ -22,23 +21,37 @@ namespace PoorFamily.Simulation.Donation
             Options.Add(OptionMenu.GiveDirectly);
         }
 
-        public void Select(ADonorOption donorOption)
-        {
-            SelectedOption = donorOption;
-        }
-
         public void AddYears(float deltaYears)
         {
             FundsAvailable += deltaYears * DisposableIncome;
 
+            SelectNextOption();
             TryFundOption();
+        }
+
+        private void SelectNextOption()
+        {
+            bool anyOptionSelected = false;
+            foreach (ADonorOption option in Options)
+            {
+                if (!option.WillSelectNext || anyOptionSelected)
+                {
+                    option.WillSelectNext = false;
+                    option.WillFund = false;
+                    continue;
+                }
+
+                anyOptionSelected = true;
+                option.WillSelectNext = false;
+                option.WillFund = true;
+            }
         }
 
         private void TryFundOption()
         {
-            foreach(ADonorOption option in Options)
+            foreach (ADonorOption option in Options)
             {
-                if (option != SelectedOption)
+                if (!option.WillFund)
                 {
                     option.FundingProgress = 0f;
                     option.Funded = false;
