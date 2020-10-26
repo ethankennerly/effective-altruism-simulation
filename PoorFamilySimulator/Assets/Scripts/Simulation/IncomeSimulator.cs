@@ -13,6 +13,8 @@ namespace PoorFamily.Simulation
         [Header("Satisfaction")]
         [Range(0, 10)] public float AverageDoublingsOfIncome;
         [Range(0f, 1f)] public float NormalizedIncome;
+        public int NormalizedIncomePercent;
+        public string NormalizedIncomeString = "0%";
 
         [Range(100, 102400)] public float PoorestIncome = 100f;
         [Range(100, 102400)] public float RichestIncome = 102400f;
@@ -43,9 +45,7 @@ namespace PoorFamily.Simulation
             CalculateRaise(deltaYears);
             TransferBySchedule(deltaYears);
             TryShareIncome();
-
-            AverageDoublingsOfIncome = CalculateAverageDoublingsOfIncome();
-            NormalizedIncome = Mathf.Clamp01(AverageDoublingsOfIncome / RichestDoublings);
+            NormalizeIncome();
         }
 
         private void CalculateRaise(float deltaYears)
@@ -248,6 +248,21 @@ namespace PoorFamily.Simulation
         #endregion Income Sharing
 
         #region Normalized Income
+
+        private void NormalizeIncome()
+        {
+            AverageDoublingsOfIncome = CalculateAverageDoublingsOfIncome();
+            NormalizedIncome = Mathf.Clamp01(AverageDoublingsOfIncome / RichestDoublings);
+
+            int nextNormalizedIncomePercent = (int)(NormalizedIncome * 100);
+            if (NormalizedIncomePercent == nextNormalizedIncomePercent)
+            {
+                return;
+            }
+
+            NormalizedIncomePercent = nextNormalizedIncomePercent;
+            NormalizedIncomeString = NormalizedIncomePercent + "%";
+        }
 
         private float CalculateAverageDoublingsOfIncome()
         {

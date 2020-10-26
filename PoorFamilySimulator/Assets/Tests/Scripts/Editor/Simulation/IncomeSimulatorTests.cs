@@ -180,6 +180,7 @@ namespace PoorFamily.Tests.Simulation
             IncomeSimulator incomeSim = new IncomeSimulator(new List<Human>());
             incomeSim.AddYears(0.001f);
             Assert.AreEqual(0f, incomeSim.NormalizedIncome);
+            Assert.AreEqual("0%", incomeSim.NormalizedIncomeString);
         }
 
         [Test]
@@ -194,6 +195,7 @@ namespace PoorFamily.Tests.Simulation
             incomeSim.PoorestIncome = 100;
             incomeSim.AddYears(0.001f);
             Assert.AreEqual(0.5f, incomeSim.NormalizedIncome);
+            Assert.AreEqual("50%", incomeSim.NormalizedIncomeString);
         }
 
         #endregion Normalized Income
