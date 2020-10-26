@@ -16,6 +16,8 @@ namespace PoorFamily.Simulation
         public YearTimer YearTimer { get; } = new YearTimer(2013, 100);
 
         public List<Human> Humans = new List<Human>();
+        public int NumHumans;
+        public string NumHumansString;
 
         public Donor Donor;
 
@@ -44,6 +46,13 @@ namespace PoorFamily.Simulation
             Birth.AddYears(deltaYears);
             Income.AddYears(deltaYears);
             m_Death.TryDeath();
+
+            int nextHumans = Humans.Count;
+            if (NumHumans != nextHumans)
+            {
+                NumHumans = nextHumans;
+                NumHumansString = nextHumans.ToString();
+            }
 
             Updated.TryInvoke(this);
         }

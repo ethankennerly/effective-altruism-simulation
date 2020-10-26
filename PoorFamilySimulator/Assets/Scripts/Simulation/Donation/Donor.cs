@@ -19,6 +19,8 @@ namespace PoorFamily.Simulation.Donation
 
         private readonly CultureInfo m_CultureInfo;
 
+        public bool WillSetCostStrings;
+
         public Donor()
         {
             m_CultureInfo = CultureInfo.CreateSpecificCulture(Culture);
@@ -27,29 +29,17 @@ namespace PoorFamily.Simulation.Donation
             Options.Add(OptionMenu.GiveDirectly);
             Options.Add(OptionMenu.Save);
             Options.Add(OptionMenu.EatOutAndEntertain);
-        }
 
-        private void SetCostStrings(List<ADonorOption> options)
-        {
-            foreach (ADonorOption option in options)
-            {
-                option.CostString = ConvertCurrencyToString(option.Cost);
-            }
-        }
-
-        private string ConvertCurrencyToString(float currency)
-        {
-            int wholeCurrency = (int)currency;
-            if (wholeCurrency == 0)
-            {
-                return "";
-            }
-
-            return wholeCurrency.ToString("C0", m_CultureInfo);
+            WillSetCostStrings = true;
         }
 
         public void AddYears(float deltaYears)
         {
+            if (deltaYears <= 0f)
+            {
+                return;
+            }
+
             FundsAvailable += deltaYears * DisposableIncome;
 
             SelectNextOption();
@@ -105,6 +95,34 @@ namespace PoorFamily.Simulation.Donation
 
                 FundsAvailable -= option.Cost;
             }
+        }
+
+        /// <remarks>
+        /// String manipulation allocates garbage.
+        /// </remarks>
+        private void SetCostStrings(List<ADonorOption> options)
+        {
+            if (!WillSetCostStrings)
+            {
+                return;
+            }
+            WillSetCostStrings = false;
+
+            foreach (ADonorOption option in options)
+            {
+                option.CostString = ConvertCurrencyToString(option.Cost);
+            }
+        }
+
+        private string ConvertCurrencyToString(float currency)
+        {
+            int wholeCurrency = (int)currency;
+            if (wholeCurrency == 0)
+            {
+                return "";
+            }
+
+            return wholeCurrency.ToString("C0", m_CultureInfo);
         }
     }
 }

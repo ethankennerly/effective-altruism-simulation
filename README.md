@@ -73,6 +73,8 @@ For simplicity:
 
 #### Reproduction
 
+Text displays Family Size.
+
 - Age
 - Life Expectancy
 
@@ -108,11 +110,9 @@ This simulation focuses on small scope, simplicity, and publicly available evide
 
 The following features have not been prioritized or implemented.
 
-## Future Donation
+## Future UI.
 
 Read doublings of income.
-
-Read number of humans.
 
 Progress bar funding the action.
 
