@@ -19,6 +19,7 @@ namespace PoorFamily.Simulation
         public bool IsFemale;
         [Range(0f, 0.07f)] public float BirthRate;
         public FloatRange FertileAgeRange;
+        public bool IsLiterate;
 
         public static void AddAgeToEach(List<Human> humans, float deltaYears)
         {

@@ -6,8 +6,10 @@ namespace PoorFamily.Simulation
     [Serializable]
     public sealed class BirthRateSimulator
     {
-        public float BirthRateAtPoorestIncome = 1f / 16f;
-        public float BirthRatePerDoublingOfIncome = -1f / 256f;
+        public float BirthRateAtPoorestIncome = 64f / 1024f;
+        public float BirthRatePerDoublingOfIncome = -4f / 1024f;
+        public float BirthRateForLiterateFemale = -20f / 1024f;
+        public float AverageBirthRate;
 
         private readonly List<Human> m_Humans;
 
@@ -16,13 +18,21 @@ namespace PoorFamily.Simulation
             m_Humans = humans;
         }
 
-        public void CalculateEachByIncome()
+        public void CalculateEach()
         {
+            if (m_Humans.Count == 0)
+            {
+                AverageBirthRate = 0f;
+            }
+
+            float sumOfBirthRates = 0f;
             foreach (Human human in m_Humans)
             {
                 human.BirthRate = BirthRateAtPoorestIncome +
                     human.DoublingsOfIncome * BirthRatePerDoublingOfIncome;
+                sumOfBirthRates += human.BirthRate;
             }
+            AverageBirthRate = sumOfBirthRates / m_Humans.Count;
         }
     }
 }

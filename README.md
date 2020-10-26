@@ -119,20 +119,19 @@ The following features have not been prioritized or implemented.
 
 80% of all humans are literate.
 
-Income correlates to literacy.
-- [1% income](http://bibliotecadigital.fgv.br/ocs/index.php/sbe/EBE08/paper/viewFile/407/55)
-
 Birth rate [correlates to female literacy](https://amity.edu/UserFiles/admaa/54a1bPaper%206.pdf).
 - [2% lower birth rate for a literate female, 0% for a literate male](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4649870/)
-
-Life expectancy correlates to literacy.
-- Maybe this is accounted for in the income effect on life expectancy.
 
 Donate to Pratham.
 - [Cost $100 per literate child](https://prathamusa.org/program/literacy-and-learning/)
     - Cost scales to about 1/6th of average family income.
 - The student remains literate for life.
 - Disable donation at 100% literacy.
+
+Income correlates to literacy.
+- [1% income](http://bibliotecadigital.fgv.br/ocs/index.php/sbe/EBE08/paper/viewFile/407/55)
+
+Life expectancy correlates to literacy [more than income alone.](https://www.newscientist.com/article/2166833-more-education-is-what-makes-people-live-longer-not-more-money/)
 
 ## Malaria Simulator
 
@@ -157,6 +156,10 @@ Income correlates to worms.
 
 Donate to Deworm the World.
 - [$0.20 deworms one child one year](https://docs.google.com/spreadsheets/d/1BmFwVYeGMkpys6hG0tnfHyq__ZFZf-bmXYLSHODGpLY/edit#gid=472531943&range=A37:B47)
+
+## Future Income Simulator
+
+- Scheduled transfers not distributed per person. This avoids redistributing when someone dies.
 
 ## Future UI
 

@@ -42,7 +42,7 @@ namespace PoorFamily.Simulation
             float deltaYears = YearTimer.DeltaYears;
 
             Donor.AddYears(deltaYears);
-            BirthRate.CalculateEachByIncome();
+            BirthRate.CalculateEach();
             Birth.AddYears(deltaYears);
             Income.AddYears(deltaYears);
             m_Death.TryDeath();
