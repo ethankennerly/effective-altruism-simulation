@@ -31,19 +31,27 @@ namespace PoorFamily.Simulation.Donation
 
         private void SelectNextOption()
         {
+            ADonorOption selectedOption = null;
             bool anyOptionSelected = false;
             foreach (ADonorOption option in Options)
             {
-                if (!option.WillSelectNext || anyOptionSelected)
+                anyOptionSelected = option.WillSelectNext;
+                if (anyOptionSelected)
                 {
-                    option.WillSelectNext = false;
-                    option.WillFund = false;
-                    continue;
+                    selectedOption = option;
+                    break;
                 }
+            }
 
-                anyOptionSelected = true;
+            if (!anyOptionSelected)
+            {
+                return;
+            }
+
+            foreach (ADonorOption option in Options)
+            {
                 option.WillSelectNext = false;
-                option.WillFund = true;
+                option.WillFund = option == selectedOption;
             }
         }
 
