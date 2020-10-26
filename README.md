@@ -17,6 +17,11 @@ Let's simulate these charities effects' on a simple model of a family.
 
 ## Win Condition
 
+Family Satisfaction: 0% to 100%.
+- 0% represents income below the bottom 1% of the world ($100/year/person).
+- 100% represents income above the top 1% of the world ($102,400/year/person).
+- This is a logarithmic scale. Each 10% represents income doubling.
+
 A marker summarizes the score in a range from absolute poverty to absolute wealth.
 
 Doubling of purchasing-power-parity income from a benchmark near the poorest one percent. As a benchmark of the poorest annual income, $100 USD PPP in 2013 is benchmarked at 0. So an income of $200 doubles 1 time, $400 doubles 2 times. The average of those two humans would be 1.5. This attempts to incentivize investments in both the poor and rich, with a heavy emphasis on investing in the poor.
@@ -111,8 +116,6 @@ This simulation focuses on small scope, simplicity, and publicly available evide
 The following features have not been prioritized or implemented.
 
 ## Future UI.
-
-Read doublings of income.
 
 Progress bar funding the action.
 

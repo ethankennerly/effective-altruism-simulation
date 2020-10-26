@@ -677,5 +677,35 @@ PrefabInstance:
       propertyPath: m_SimulatorInspector
       value: 
       objectReference: {fileID: 7303820927321111072}
+    - target: {fileID: 3810370605386469241, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_SimulatorInspector
+      value: 
+      objectReference: {fileID: 7303820927321111072}
+    - target: {fileID: 6670547773016183439, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670547773016183439, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5620043658492096555, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5620043658492096555, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8684095466731946108, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_SimulatorInspector
+      value: 
+      objectReference: {fileID: 7303820927321111072}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e02df19c08dbea4698d3215fb73b02c, type: 3}
