@@ -69,6 +69,7 @@ Schedule income adjustments in future years. These are applied after other input
 For simplicity:
 - Applies at start of each calendar year
 - list of adjustments for future years
+- When scheduling transfers, and already queued, add to each year in the queue.
 
 #### Reproduction
 
@@ -85,12 +86,6 @@ Age is represented as a vertical position from bottom 0 to top 100.
 
 To simply simulate probabilities, the expected value will be used for rates. For example, with a birth rate of 4%, the would be a birth per 25 life-years. Since it is a binary decision, the two outcomes are averaged. When the average would equal 4% and there is an eligible female, a child birth is attempted. Example, with 1 male and 1 female both at 12 years of age, that is 24 life-years. The actual birth rate is 0%. The expected birth rate is 4%. Yet the preceding 24 life-years had 0% birth rate, which draws down the average. To maintain the average, about 12 years would be above the expected birth rate and about 12 years below the expected birth rate. So the first child would be attempted at about 13 life-years, and the next around 38 life-years. Life-years is the sum of the ages of all living.
 
-# Future Features
-
-This simulation focuses on small scope, simplicity, and publicly available evidence.
-
-The following features have not been prioritized or implemented.
-
 ## Recurring Donations
 
 See budget.
@@ -101,23 +96,27 @@ Donation depletes budget by amount.
 
 Cost on each button.
 
-When scheduling transfers, and already queued, add to queue.
-
 While out of budget, button is also non-interactable.
 
-Progress bar funding the action.
+## Eat Out And Entertain
 
-When funded, a new rectangle of full progress moves from the progress bar toward the recipients.
+$7000/year for average American in 2015.
 
-Repeat the last button pressed when funded.
+# Future Features
 
-Button:
-- Eat Out And Entertain (One Night Per Week) $2000/year
-- Save
+This simulation focuses on small scope, simplicity, and publicly available evidence.
+
+The following features have not been prioritized or implemented.
+
+## Future Donation
 
 Read doublings of income.
 
 Read number of humans.
+
+Progress bar funding the action.
+
+When funded, a new rectangle of full progress moves from the progress bar toward the recipients.
 
 ## Literacy Simulator
 

@@ -15,7 +15,7 @@ namespace PoorFamily.Simulation.Donation
 
         public DonorOptionMenu OptionMenu = new DonorOptionMenu();
 
-        public readonly List<ADonorOption> Options;
+        public List<ADonorOption> Options;
 
         private readonly CultureInfo m_CultureInfo;
 
@@ -24,8 +24,9 @@ namespace PoorFamily.Simulation.Donation
             m_CultureInfo = CultureInfo.CreateSpecificCulture(Culture);
 
             Options = new List<ADonorOption>();
-            Options.Add(OptionMenu.Save);
             Options.Add(OptionMenu.GiveDirectly);
+            Options.Add(OptionMenu.Save);
+            Options.Add(OptionMenu.EatOutAndEntertain);
         }
 
         private void SetCostStrings(List<ADonorOption> options)

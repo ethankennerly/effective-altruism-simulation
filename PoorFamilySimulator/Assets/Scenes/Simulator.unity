@@ -348,11 +348,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SimulatorInspector
       objectReference: {fileID: 0}
-    - target: {fileID: 7303820927321111072, guid: 725d1867e8f484a44b95690920206223,
-        type: 3}
-      propertyPath: Simulator.TimeScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2379592858208767709, guid: 725d1867e8f484a44b95690920206223,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -603,6 +598,56 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2026118472812560621, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_SimulatorInspector
+      value: 
+      objectReference: {fileID: 7303820927321111072}
+    - target: {fileID: 1441262278310964553, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441262278310964553, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235394768616412958, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235394768616412958, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486652347430690414, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_SimulatorInspector
+      value: 
+      objectReference: {fileID: 7303820927321111072}
+    - target: {fileID: 313915228264532381, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 313915228264532381, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8430342025149255705, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8430342025149255705, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 884148777316196813, guid: 1e02df19c08dbea4698d3215fb73b02c,
         type: 3}
       propertyPath: m_SimulatorInspector
       value: 

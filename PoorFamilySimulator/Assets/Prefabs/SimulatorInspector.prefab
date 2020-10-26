@@ -74,6 +74,13 @@ MonoBehaviour:
       FundsAvailable: 0
       FundsAvailableString: 
       OptionMenu:
+        GiveDirectly:
+          Cost: 1205
+          CostString: 
+          WillSelectNext: 0
+          WillFund: 0
+          FundingProgress: 0
+          Funded: 0
         Save:
           Cost: 0
           CostString: 
@@ -81,8 +88,8 @@ MonoBehaviour:
           WillFund: 0
           FundingProgress: 0
           Funded: 0
-        GiveDirectly:
-          Cost: 1205
+        EatOutAndEntertain:
+          Cost: 7000
           CostString: 
           WillSelectNext: 0
           WillFund: 0
