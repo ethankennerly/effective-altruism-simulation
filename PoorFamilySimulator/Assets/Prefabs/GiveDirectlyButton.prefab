@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3315480386627918462}
   - component: {fileID: 6712450546131931567}
   - component: {fileID: 3950958051627413965}
+  - component: {fileID: 3590916687198354473}
   m_Layer: 5
   m_Name: GiveDirectlyButton
   m_TagString: Untagged
@@ -133,6 +134,20 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &3590916687198354473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278555474445725289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7522813e9e513c5468846a8d6cf12b8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SelectionKey: 32
+  m_SelectableObject: {fileID: 278555474445725289}
 --- !u!1 &3363574586895058821
 GameObject:
   m_ObjectHideFlags: 0
