@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace PoorFamily.Simulation.Donation
 {
@@ -8,7 +9,7 @@ namespace PoorFamily.Simulation.Donation
         public float Cost;
         public bool WillSelectNext;
         public bool WillFund;
-        public float FundingProgress;
+        [Range(0f, 1f)] public float FundingProgress;
         public bool Funded;
     }
 }

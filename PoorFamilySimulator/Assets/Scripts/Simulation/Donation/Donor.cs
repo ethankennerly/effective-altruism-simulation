@@ -9,6 +9,7 @@ namespace PoorFamily.Simulation.Donation
     {
         [Range(0f, 100000f)] public float DisposableIncome = 30000f;
         public float FundsAvailable;
+        public string FundsAvailableString;
 
         public DonorOptionMenu OptionMenu = new DonorOptionMenu();
 

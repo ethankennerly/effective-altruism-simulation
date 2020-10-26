@@ -16,6 +16,22 @@ namespace PoorFamily.Tests.Simulation.Donation
         }
 
         [Test]
+        public void AddYears_FundsAvailableStringRoundsDownUSD1()
+        {
+            Donor donor = new Donor{FundsAvailable = 1.75f};
+            donor.AddYears(0f);
+            Assert.AreEqual("$1", donor.FundsAvailableString);
+        }
+
+        [Test]
+        public void AddYears_FundsAvailableStringThousandsSeparateor()
+        {
+            Donor donor = new Donor{FundsAvailable = 30000f};
+            donor.AddYears(0f);
+            Assert.AreEqual("$30,000", donor.FundsAvailableString);
+        }
+
+        [Test]
         public void FundsAvailableUnderCost_GiveDirectlyNotFunded()
         {
             Donor donor = new Donor{FundsAvailable = 1204f};
