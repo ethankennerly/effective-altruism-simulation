@@ -45,6 +45,7 @@ namespace PoorFamily.Simulation
             CalculateRaise(deltaYears);
             TransferBySchedule(deltaYears);
             TryShareIncome();
+            CalculateLifeExpectancy();
             NormalizeIncome();
         }
 

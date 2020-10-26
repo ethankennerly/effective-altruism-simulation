@@ -115,12 +115,6 @@ This simulation focuses on small scope, simplicity, and publicly available evide
 
 The following features have not been prioritized or implemented.
 
-## Future UI.
-
-Progress bar funding the action.
-
-When funded, a new rectangle of full progress moves from the progress bar toward the recipients.
-
 ## Literacy Simulator
 
 80% of all humans are literate.
@@ -136,7 +130,9 @@ Life expectancy correlates to literacy.
 
 Donate to Pratham.
 - [Cost $100 per literate child](https://prathamusa.org/program/literacy-and-learning/)
+    - Cost scales to about 1/6th of average family income.
 - The student remains literate for life.
+- Disable donation at 100% literacy.
 
 ## Malaria Simulator
 
@@ -161,4 +157,10 @@ Income correlates to worms.
 
 Donate to Deworm the World.
 - [$0.20 deworms one child one year](https://docs.google.com/spreadsheets/d/1BmFwVYeGMkpys6hG0tnfHyq__ZFZf-bmXYLSHODGpLY/edit#gid=472531943&range=A37:B47)
+
+## Future UI
+
+Progress bar funding the action.
+
+When funded, a new rectangle of full progress moves from the progress bar toward the recipients.
 
