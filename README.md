@@ -93,20 +93,27 @@ The following features have not been prioritized or implemented.
 
 ## Recurring Donations
 
-Budget.
+See budget.
+
+Income to donate each year.
 
 Donation depletes budget by amount.
 
 Cost on each button.
 
-Income to donate each year.
+When scheduling transfers, and already queued, add to queue.
 
 While out of budget, button is also non-interactable.
 
+Progress bar funding the action.
+
+When funded, a new rectangle of full progress moves from the progress bar toward the recipients.
+
+Repeat the last button pressed when funded.
+
 Button:
 - Eat Out And Entertain (One Night Per Week) $2000/year
-
-Repeat the last button pressed each new year.
+- Save
 
 ## Literacy Simulator
 
@@ -123,6 +130,7 @@ Life expectancy correlates to literacy.
 
 Donate to Pratham.
 - [Cost $100 per literate child](https://prathamusa.org/program/literacy-and-learning/)
+- The student remains literate for life.
 
 ## Malaria Simulator
 
