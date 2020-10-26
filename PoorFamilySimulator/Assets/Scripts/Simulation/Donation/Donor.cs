@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 
 namespace PoorFamily.Simulation.Donation
@@ -8,6 +9,7 @@ namespace PoorFamily.Simulation.Donation
     public sealed class Donor
     {
         [Range(0f, 100000f)] public float DisposableIncome = 30000f;
+        public string Culture = "en-US";
         public float FundsAvailable;
         public string FundsAvailableString;
 
@@ -15,8 +17,12 @@ namespace PoorFamily.Simulation.Donation
 
         public readonly List<ADonorOption> Options;
 
+        private readonly CultureInfo m_CultureInfo;
+
         public Donor()
         {
+            m_CultureInfo = CultureInfo.CreateSpecificCulture(Culture);
+
             Options = new List<ADonorOption>();
             Options.Add(OptionMenu.Save);
             Options.Add(OptionMenu.GiveDirectly);
@@ -28,6 +34,9 @@ namespace PoorFamily.Simulation.Donation
 
             SelectNextOption();
             TryFundOption();
+
+            int wholeFundsAvailable = (int)FundsAvailable;
+            FundsAvailableString = wholeFundsAvailable.ToString("C0", m_CultureInfo);
         }
 
         private void SelectNextOption()
