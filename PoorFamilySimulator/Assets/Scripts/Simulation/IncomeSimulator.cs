@@ -126,11 +126,11 @@ namespace PoorFamily.Simulation
         }
 
         /// <summary>
-        /// This overwrites any transfer not applied yet.
+        /// This adds to any transfer not applied yet.
         /// </summary>
         public void ScheduleTransfer(List<float> additionInFutureYears)
         {
-            m_NextAdditionInFutureYears = additionInFutureYears;
+            AddTransfers(ref m_NextAdditionInFutureYears, additionInFutureYears);
         }
 
         private float m_RemainingYearsUntilNextTransfer = 0.5f;
@@ -192,23 +192,34 @@ namespace PoorFamily.Simulation
 
             foreach (Human human in m_Humans)
             {
-                if (human.ScheduledTransfers == null)
-                {
-                    human.ScheduledTransfers = new List<float>(averageTransfers.Count);
-                }
-
-                int yearIndex = 0;
-                for (; yearIndex < human.ScheduledTransfers.Count; ++yearIndex)
-                {
-                    human.ScheduledTransfers[yearIndex] += averageTransfers[yearIndex];
-                }
-
-                for (; yearIndex < numTransfers; ++yearIndex)
-                {
-                    human.ScheduledTransfers.Add(averageTransfers[yearIndex]);
-                }
+                AddTransfers(ref human.ScheduledTransfers, averageTransfers);
 
                 human.Income += human.ScheduledTransfers[0];
+            }
+        }
+
+        private static void AddTransfers(
+            ref List<float> originalTransfers, 
+            List<float> additionalTransfers)
+        {
+            int numTransfers = additionalTransfers.Count;
+            if (originalTransfers == null)
+            {
+                originalTransfers = new List<float>(numTransfers);
+            }
+
+            
+            int yearIndex = 0;
+            for (int numOriginalTransfers = originalTransfers.Count;
+                yearIndex < numOriginalTransfers;
+                ++yearIndex)
+            {
+                originalTransfers[yearIndex] += additionalTransfers[yearIndex];
+            }
+
+            for (; yearIndex < numTransfers; ++yearIndex)
+            {
+                originalTransfers.Add(additionalTransfers[yearIndex]);
             }
         }
 

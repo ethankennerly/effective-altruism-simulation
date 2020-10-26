@@ -88,11 +88,12 @@ namespace PoorFamily.Tests.Simulation
             Assert.AreEqual(14f, humans[0].Income, "Year 3");
             Human.AddAgeToEach(humans, 1f);
             incomeSim.AddYears(1f);
-            Assert.AreEqual(8f, humans[0].Income, "Year 4");
+            Assert.AreEqual(8f, humans[0].Income,
+                "Year 4, after transfers, income returns to raise amount.");
         }
 
         [Test]
-        public void AddYears_Raise2AndScheduleThreeTransfers130Then8Then8_Income392Then28Then30Then24()
+        public void AddYears_Raise2AndScheduleThreeTransfers130Then8Then8_Income392Then28Then30Then8()
         {
             List<Human> humans = new List<Human>{new Human()};
             IncomeSimulator incomeSim = new IncomeSimulator(humans);
@@ -116,7 +117,8 @@ namespace PoorFamily.Tests.Simulation
             Assert.AreEqual(30f, humans[0].Income, "Year 3");
             Human.AddAgeToEach(humans, 1f);
             incomeSim.AddYears(1f);
-            Assert.AreEqual(24f, humans[0].Income, "Year 4");
+            Assert.AreEqual(8f, humans[0].Income,
+                "Year 4, after transfers, income returns to raise amount.");
         }
 
         #endregion Income Scheduler
