@@ -3,8 +3,6 @@ using PoorFamily.Simulation;
 using System;
 using System.Collections.Generic;
 
-using Debug = UnityEngine.Debug;
-
 namespace PoorFamily.Tests.Simulation
 {
     public sealed class BirthRateSimulatorTests
