@@ -15,7 +15,6 @@ namespace PoorFamily.UI
 
         protected override void OnEnable()
         {
-            m_CostText.text = m_DonorOption.CostString;
             m_SelectButton.onClick.AddListener(m_DonorOption.Select);
             base.OnEnable();
         }
@@ -28,6 +27,11 @@ namespace PoorFamily.UI
 
         protected override void OnSimulatorUpdated(Simulator simulator)
         {
+            if (m_CostText.text != m_DonorOption.CostString)
+            {
+                m_CostText.text = m_DonorOption.CostString;
+            }
+
             m_SelectButton.interactable = !m_DonorOption.WillFund;
         }
     }

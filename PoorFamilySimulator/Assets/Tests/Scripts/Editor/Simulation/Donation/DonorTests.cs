@@ -46,7 +46,7 @@ namespace PoorFamily.Tests.Simulation.Donation
             Donor donor = new Donor();
             donor.OptionMenu.GiveDirectly.Cost = 1205f;
             donor.AddYears(0f);
-            Assert.AreEqual("$1205", donor.OptionMenu.GiveDirectly.CostString);
+            Assert.AreEqual("$1,205", donor.OptionMenu.GiveDirectly.CostString);
         }
 
         [Test]

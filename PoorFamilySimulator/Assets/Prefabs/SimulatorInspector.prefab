@@ -68,6 +68,26 @@ MonoBehaviour:
       FertileAgeRange:
         Min: 14
         Max: 70
+    Donor:
+      DisposableIncome: 30000
+      Culture: en-US
+      FundsAvailable: 0
+      FundsAvailableString: 
+      OptionMenu:
+        Save:
+          Cost: 0
+          CostString: 
+          WillSelectNext: 0
+          WillFund: 0
+          FundingProgress: 0
+          Funded: 0
+        GiveDirectly:
+          Cost: 1205
+          CostString: 
+          WillSelectNext: 0
+          WillFund: 0
+          FundingProgress: 0
+          Funded: 0
     BirthRate:
       BirthRateAtPoorestIncome: 0.0625
       BirthRatePerDoublingOfIncome: -0.00390625

@@ -28,6 +28,25 @@ namespace PoorFamily.Simulation.Donation
             Options.Add(OptionMenu.GiveDirectly);
         }
 
+        private void SetCostStrings(List<ADonorOption> options)
+        {
+            foreach (ADonorOption option in options)
+            {
+                option.CostString = ConvertCurrencyToString(option.Cost);
+            }
+        }
+
+        private string ConvertCurrencyToString(float currency)
+        {
+            int wholeCurrency = (int)currency;
+            if (wholeCurrency == 0)
+            {
+                return "";
+            }
+
+            return wholeCurrency.ToString("C0", m_CultureInfo);
+        }
+
         public void AddYears(float deltaYears)
         {
             FundsAvailable += deltaYears * DisposableIncome;
@@ -35,8 +54,8 @@ namespace PoorFamily.Simulation.Donation
             SelectNextOption();
             TryFundOption();
 
-            int wholeFundsAvailable = (int)FundsAvailable;
-            FundsAvailableString = wholeFundsAvailable.ToString("C0", m_CultureInfo);
+            FundsAvailableString = ConvertCurrencyToString(FundsAvailable);
+            SetCostStrings(Options);
         }
 
         private void SelectNextOption()
