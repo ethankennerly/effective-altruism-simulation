@@ -30,6 +30,12 @@ namespace PoorFamily.Simulation
             {
                 human.BirthRate = BirthRateAtPoorestIncome +
                     human.DoublingsOfIncome * BirthRatePerDoublingOfIncome;
+
+                if (human.IsFemale && human.IsLiterate)
+                {
+                    human.BirthRate += BirthRateForLiterateFemale;
+                }
+
                 sumOfBirthRates += human.BirthRate;
             }
             AverageBirthRate = sumOfBirthRates / m_Humans.Count;
