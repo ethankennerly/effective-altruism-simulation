@@ -1,19 +1,19 @@
 using FineGameDesign.Events;
 using System;
-
-using Debug = UnityEngine.Debug;
+using UnityEngine;
 
 namespace PoorFamily.Simulation
 {
+    [Serializable]
     public sealed class YearTimer
     {
         public ActionEvent<string> TextChanged = new ActionEvent<string>();
 
         public float DeltaYears { get; private set; }
 
-        private int m_CurrentYear;
+        [SerializeField] private int m_CurrentYear;
 
-        private int m_EndYear;
+        [SerializeField] private int m_EndYear;
 
         private float m_FractionalYears;
 

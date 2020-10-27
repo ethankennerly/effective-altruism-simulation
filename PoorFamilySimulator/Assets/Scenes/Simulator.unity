@@ -350,8 +350,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7303820927321111072, guid: 725d1867e8f484a44b95690920206223,
         type: 3}
-      propertyPath: Simulator.TimeScale
-      value: 4
+      propertyPath: Simulator.Teacher.IncomeMultiplier
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 2379592858208767709, guid: 725d1867e8f484a44b95690920206223,
         type: 3}

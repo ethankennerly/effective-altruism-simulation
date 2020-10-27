@@ -44,7 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Simulator:
-    TimeScale: 1
+    TimeScale: 4
+    YearTimer:
+      m_CurrentYear: 2020
+      m_EndYear: 2070
     Humans:
     - Income: 0
       DoublingsOfIncome: 0
@@ -113,7 +116,7 @@ MonoBehaviour:
     BirthRate:
       BirthRateAtPoorestIncome: 0.0625
       BirthRatePerDoublingOfIncome: -0.00390625
-      BirthRateForLiterateFemale: -0.015625
+      BirthRateForLiterateFemale: -0.02
       AverageBirthRate: 0
     Birth:
       HistoricalBirthRate: 0
@@ -127,7 +130,7 @@ MonoBehaviour:
       RichestIncome: 102400
       PoorestDoublings: 0
       RichestDoublings: 0
-      MinAge: 10
+      MinAge: 15
       RaisePerYear: 30
       PeakAge: 30
       RaisePerYearAfterPeak: -20
@@ -137,5 +140,6 @@ MonoBehaviour:
     Teacher:
       TuitionPerIncome: 0.15625
       MinTuition: 50
+      IncomeMultiplier: 1.2
       LiteracyRate: 0
       Funds: 0

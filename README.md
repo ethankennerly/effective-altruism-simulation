@@ -136,6 +136,7 @@ Income correlates to literacy.
 - [1% income](http://bibliotecadigital.fgv.br/ocs/index.php/sbe/EBE08/paper/viewFile/407/55)
 
 Life expectancy correlates to literacy [more than income alone.](https://www.newscientist.com/article/2166833-more-education-is-what-makes-people-live-longer-not-more-money/)
+    - Bump up since child life expectancy also correlates to the mother's literacy.
 
 ## Malaria Simulator
 

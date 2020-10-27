@@ -9,6 +9,7 @@ namespace PoorFamily.Simulation
     {
         public float TuitionPerIncome = 20f / 128f;
         public float MinTuition = 100f;
+        public float IncomeMultiplier = 1f + 64f / 1024f;
         public float LiteracyRate;
         public float Funds;
 
@@ -58,6 +59,7 @@ namespace PoorFamily.Simulation
 
                     Funds -= tuition;
                     human.IsLiterate = true;
+                    human.Income *= IncomeMultiplier;
                 }
 
                 sumOfIsLiterates++;

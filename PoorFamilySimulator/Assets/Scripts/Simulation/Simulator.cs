@@ -13,7 +13,7 @@ namespace PoorFamily.Simulation
 
         public float TimeScale = 1f;
 
-        public YearTimer YearTimer { get; } = new YearTimer(2013, 100);
+        public YearTimer YearTimer = new YearTimer(2013, 100);
 
         public List<Human> Humans = new List<Human>();
         public int NumHumans;
