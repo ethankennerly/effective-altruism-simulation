@@ -73,7 +73,7 @@ MonoBehaviour:
     NumHumans: 0
     NumHumansString: 
     Donor:
-      DisposableIncome: 30000
+      DisposableIncome: 100
       Culture: en-US
       FundsAvailable: 0
       FundsAvailableString: 
@@ -110,8 +110,6 @@ MonoBehaviour:
           WillFund: 0
           FundingProgress: 0
           Funded: 0
-      Options: []
-      WillSetCostStrings: 1
     BirthRate:
       BirthRateAtPoorestIncome: 0.0625
       BirthRatePerDoublingOfIncome: -0.00390625
@@ -136,3 +134,8 @@ MonoBehaviour:
       SharingEnabled: 1
       LifeExpectancyAtPoorestIncome: 47
       LifeExpectancyPerDoublingOfIncome: 4
+    Teacher:
+      TuitionPerIncome: 0.15625
+      MinTuition: 50
+      LiteracyRate: 0
+      Funds: 0

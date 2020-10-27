@@ -56,6 +56,12 @@ namespace PoorFamily.Simulation.Donation
             bool anyOptionSelected = false;
             foreach (ADonorOption option in Options)
             {
+                if (option.NoRoomForFunding)
+                {
+                    option.WillFund = false;
+                    option.WillSelectNext = false;
+                }
+
                 anyOptionSelected = option.WillSelectNext;
                 if (anyOptionSelected)
                 {

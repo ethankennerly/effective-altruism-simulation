@@ -8,7 +8,7 @@ namespace PoorFamily.Simulation
     public sealed class LiteracyTeacher
     {
         public float TuitionPerIncome = 20f / 128f;
-        public float MinTuition = 50f;
+        public float MinTuition = 100f;
         public float LiteracyRate;
         public float Funds;
 
@@ -47,6 +47,10 @@ namespace PoorFamily.Simulation
                 if (!human.IsLiterate)
                 {
                     float tuition = human.Income * TuitionPerIncome;
+                    if (tuition < MinTuition)
+                    {
+                        tuition = MinTuition;
+                    }
                     if (Funds < tuition)
                     {
                         continue;

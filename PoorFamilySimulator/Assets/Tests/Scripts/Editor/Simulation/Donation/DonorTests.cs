@@ -139,5 +139,23 @@ namespace PoorFamily.Tests.Simulation.Donation
             donor.AddYears(1f / 1024f);
             Assert.IsTrue(donor.OptionMenu.GiveDirectly.Funded);
         }
+
+        [Test]
+        public void SelectPratham_NoRoomForFunding_NotSelectedNoCostPaid()
+        {
+            Donor donor = new Donor{DisposableIncome = 0f, FundsAvailable = 750f};
+            donor.OptionMenu.Pratham.Cost = 500f;
+            donor.OptionMenu.Pratham.Select();
+            donor.AddYears(1f / 1024f);
+            Assert.AreEqual(250f, donor.FundsAvailable, "Donor funds after funding once.");
+            donor.OptionMenu.Pratham.NoRoomForFunding = true;
+            donor.AddYears(1f / 1024f);
+            donor.AddYears(1f / 1024f);
+            Assert.AreEqual(250f, donor.FundsAvailable, "Donor funds after no room for funding");
+            Assert.IsFalse(donor.OptionMenu.Pratham.WillSelectNext, "Will Select Next");
+            Assert.IsFalse(donor.OptionMenu.Pratham.WillFund, "Will Fund");
+            Assert.IsFalse(donor.OptionMenu.Pratham.Funded, "Funded");
+            Assert.AreEqual(0f, donor.OptionMenu.Pratham.FundingProgress, "Funding Progress");
+        }
     }
 }
