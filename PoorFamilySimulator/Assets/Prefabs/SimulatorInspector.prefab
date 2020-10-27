@@ -57,6 +57,7 @@ MonoBehaviour:
       FertileAgeRange:
         Min: 14
         Max: 42
+      IsLiterate: 0
     - Income: 0
       DoublingsOfIncome: 0
       NormalizedIncome: 0
@@ -68,15 +69,27 @@ MonoBehaviour:
       FertileAgeRange:
         Min: 14
         Max: 70
+      IsLiterate: 0
+    NumHumans: 0
+    NumHumansString: 
     Donor:
       DisposableIncome: 30000
       Culture: en-US
       FundsAvailable: 0
       FundsAvailableString: 
       OptionMenu:
+        Pratham:
+          Cost: 500
+          CostString: 
+          NoRoomForFunding: 0
+          WillSelectNext: 0
+          WillFund: 0
+          FundingProgress: 0
+          Funded: 0
         GiveDirectly:
           Cost: 1205
           CostString: 
+          NoRoomForFunding: 0
           WillSelectNext: 0
           WillFund: 0
           FundingProgress: 0
@@ -84,6 +97,7 @@ MonoBehaviour:
         Save:
           Cost: 0
           CostString: 
+          NoRoomForFunding: 0
           WillSelectNext: 0
           WillFund: 0
           FundingProgress: 0
@@ -91,19 +105,26 @@ MonoBehaviour:
         EatOutAndEntertain:
           Cost: 7000
           CostString: 
+          NoRoomForFunding: 0
           WillSelectNext: 0
           WillFund: 0
           FundingProgress: 0
           Funded: 0
+      Options: []
+      WillSetCostStrings: 1
     BirthRate:
       BirthRateAtPoorestIncome: 0.0625
       BirthRatePerDoublingOfIncome: -0.00390625
+      BirthRateForLiterateFemale: -0.015625
+      AverageBirthRate: 0
     Birth:
       HistoricalBirthRate: 0
       NumHumans: 0
     Income:
       AverageDoublingsOfIncome: 0
       NormalizedIncome: 0
+      NormalizedIncomePercent: 0
+      NormalizedIncomeString: 
       PoorestIncome: 100
       RichestIncome: 102400
       PoorestDoublings: 0

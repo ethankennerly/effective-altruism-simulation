@@ -8,6 +8,7 @@ namespace PoorFamily.Simulation
     public sealed class LiteracyTeacher
     {
         public float TuitionPerIncome = 20f / 128f;
+        public float MinTuition = 50f;
         public float LiteracyRate;
         public float Funds;
 
@@ -75,8 +76,11 @@ namespace PoorFamily.Simulation
             {
                 return;
             }
-        
+       
+            UnityEngine.Debug.Log("Literacy funded");
             AddFunds(literacyOption.Cost);
+            literacyOption.Funded = false;
+            literacyOption.FundingProgress = 0f;
         }
 
         private void TrySetNoRoomForFunding(bool noRoomForFunding)

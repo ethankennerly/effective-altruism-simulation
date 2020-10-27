@@ -25,10 +25,12 @@ namespace PoorFamily.Simulation
         public BirthSimulator Birth;
         private DeathSimulator m_Death;
         public IncomeSimulator Income;
+        public LiteracyTeacher Teacher;
 
         public Simulator()
         {
             Donor = new Donor();
+            Teacher = new LiteracyTeacher(Humans, Donor);
             BirthRate = new BirthRateSimulator(Humans);
             Birth = new BirthSimulator(Humans);
             Income = new IncomeSimulator(Humans, Donor);
@@ -42,6 +44,7 @@ namespace PoorFamily.Simulation
             float deltaYears = YearTimer.DeltaYears;
 
             Donor.AddYears(deltaYears);
+            Teacher.TryTeachEach();
             BirthRate.CalculateEach();
             Birth.AddYears(deltaYears);
             Income.AddYears(deltaYears);

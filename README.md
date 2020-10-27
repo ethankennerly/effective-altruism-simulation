@@ -93,6 +93,21 @@ Age is represented as a vertical position from bottom 0 to top 100.
 
 To simply simulate probabilities, the expected value will be used for rates. For example, with a birth rate of 4%, the would be a birth per 25 life-years. Since it is a binary decision, the two outcomes are averaged. When the average would equal 4% and there is an eligible female, a child birth is attempted. Example, with 1 male and 1 female both at 12 years of age, that is 24 life-years. The actual birth rate is 0%. The expected birth rate is 4%. Yet the preceding 24 life-years had 0% birth rate, which draws down the average. To maintain the average, about 12 years would be above the expected birth rate and about 12 years below the expected birth rate. So the first child would be attempted at about 13 life-years, and the next around 38 life-years. Life-years is the sum of the ages of all living.
 
+## Literacy Simulator
+
+80% of all humans are literate.
+
+Birth rate [correlates to female literacy](https://amity.edu/UserFiles/admaa/54a1bPaper%206.pdf).
+- [2% lower birth rate for a literate female, 0% for a literate male](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4649870/)
+
+Donate to Pratham.
+- [Cost $100 per literate child](https://prathamusa.org/program/literacy-and-learning/)
+    - Cost scales to about 1/6th of average family income.
+    - This estimate attempted to account for overhead.
+- The student remains literate for life.
+- No room for funding while 100% literacy.
+    - Hide button when no room for funding.
+
 ## Recurring Donations
 
 See budget.
@@ -115,20 +130,7 @@ This simulation focuses on small scope, simplicity, and publicly available evide
 
 The following features have not been prioritized or implemented.
 
-## Literacy Simulator
-
-80% of all humans are literate.
-
-Birth rate [correlates to female literacy](https://amity.edu/UserFiles/admaa/54a1bPaper%206.pdf).
-- [2% lower birth rate for a literate female, 0% for a literate male](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4649870/)
-
-Donate to Pratham.
-- [Cost $100 per literate child](https://prathamusa.org/program/literacy-and-learning/)
-    - Cost scales to about 1/6th of average family income.
-    - This estimate attempted to account for overhead.
-- The student remains literate for life.
-- No room for funding while 100% literacy.
-    - Hide button when no room for funding.
+## Future Literacy Simulator
 
 Income correlates to literacy.
 - [1% income](http://bibliotecadigital.fgv.br/ocs/index.php/sbe/EBE08/paper/viewFile/407/55)
@@ -162,6 +164,8 @@ Donate to Deworm the World.
 ## Future Income Simulator
 
 - Scheduled transfers not distributed per person. This avoids redistributing when someone dies.
+
+- GiveDirectly no room for funding when lowest income above 600.
 
 ## Future UI
 

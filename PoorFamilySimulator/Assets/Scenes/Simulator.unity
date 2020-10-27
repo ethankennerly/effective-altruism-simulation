@@ -348,6 +348,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SimulatorInspector
       objectReference: {fileID: 0}
+    - target: {fileID: 7303820927321111072, guid: 725d1867e8f484a44b95690920206223,
+        type: 3}
+      propertyPath: Simulator.Donor.DisposableIncome
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2379592858208767709, guid: 725d1867e8f484a44b95690920206223,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -652,6 +657,11 @@ PrefabInstance:
       propertyPath: m_SimulatorInspector
       value: 
       objectReference: {fileID: 7303820927321111072}
+    - target: {fileID: 3162543775366878944, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 85.1001
+      objectReference: {fileID: 0}
     - target: {fileID: 8726674560856512049, guid: 1e02df19c08dbea4698d3215fb73b02c,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -707,5 +717,40 @@ PrefabInstance:
       propertyPath: m_SimulatorInspector
       value: 
       objectReference: {fileID: 7303820927321111072}
+    - target: {fileID: 2854882155436324786, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2854882155436324786, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7935248562390168340, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7935248562390168340, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503032629611063509, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_SimulatorInspector
+      value: 
+      objectReference: {fileID: 7303820927321111072}
+    - target: {fileID: 3703397232179446415, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3703397232179446415, guid: 1e02df19c08dbea4698d3215fb73b02c,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e02df19c08dbea4698d3215fb73b02c, type: 3}

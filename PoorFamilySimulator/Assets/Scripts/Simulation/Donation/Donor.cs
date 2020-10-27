@@ -15,11 +15,11 @@ namespace PoorFamily.Simulation.Donation
 
         public DonorOptionMenu OptionMenu = new DonorOptionMenu();
 
-        public List<ADonorOption> Options;
+        private readonly List<ADonorOption> Options;
 
         private readonly CultureInfo m_CultureInfo;
 
-        public bool WillSetCostStrings;
+        [NonSerialized] private bool m_WillSetCostStrings;
 
         public Donor()
         {
@@ -31,7 +31,7 @@ namespace PoorFamily.Simulation.Donation
             Options.Add(OptionMenu.Save);
             Options.Add(OptionMenu.EatOutAndEntertain);
 
-            WillSetCostStrings = true;
+            m_WillSetCostStrings = true;
         }
 
         public void AddYears(float deltaYears)
@@ -103,11 +103,11 @@ namespace PoorFamily.Simulation.Donation
         /// </remarks>
         private void SetCostStrings(List<ADonorOption> options)
         {
-            if (!WillSetCostStrings)
+            if (false && !m_WillSetCostStrings)
             {
                 return;
             }
-            WillSetCostStrings = false;
+            m_WillSetCostStrings = false;
 
             foreach (ADonorOption option in options)
             {
@@ -123,7 +123,8 @@ namespace PoorFamily.Simulation.Donation
                 return "";
             }
 
-            return wholeCurrency.ToString("C0", m_CultureInfo);
+            string currencyString = wholeCurrency.ToString("C0", m_CultureInfo);
+            return currencyString;
         }
     }
 }
