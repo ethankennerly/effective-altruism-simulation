@@ -17,7 +17,6 @@ namespace PoorFamily.Simulation
         public LiteracyTeacher(List<Human> humans, Donor donor = null)
         {
             m_Humans = humans;
-
             m_Donor = donor;
         }
 
@@ -27,6 +26,13 @@ namespace PoorFamily.Simulation
         }
 
         public void TryTeachEach()
+        {
+            TryAddDonorFunds();
+            LiteracyRate = TryTeachEachWithFunds();
+            TrySetNoRoomForFunding(LiteracyRate >= 1f);
+        }
+
+        private float TryTeachEachWithFunds()
         {
             int numHumans = m_Humans.Count;
             if (numHumans == 0)
@@ -52,7 +58,38 @@ namespace PoorFamily.Simulation
                 sumOfIsLiterates++;
             }
 
-            LiteracyRate = sumOfIsLiterates / numHumans;
+            return sumOfIsLiterates / numHumans;
         }
+
+        #region Donor
+
+        private void TryAddDonorFunds()
+        {
+            if (m_Donor == null)
+            {
+                return;
+            }
+
+            ADonorOption literacyOption = m_Donor.OptionMenu.Pratham;
+            if (!literacyOption.Funded)
+            {
+                return;
+            }
+        
+            AddFunds(literacyOption.Cost);
+        }
+
+        private void TrySetNoRoomForFunding(bool noRoomForFunding)
+        {
+            if (m_Donor == null)
+            {
+                return;
+            }
+
+            ADonorOption literacyOption = m_Donor.OptionMenu.Pratham;
+            literacyOption.NoRoomForFunding = noRoomForFunding;
+        }
+
+        #endregion Donor
     }
 }
